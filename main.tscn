@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://big526h2iki81"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_wf74f"]
+[ext_resource type="Script" path="res://MeatPlayer.gd" id="2_a50y4"]
+[ext_resource type="Script" path="res://VegPlayer.gd" id="3_jcb33"]
+[ext_resource type="Script" path="res://PowerUpTimer.gd" id="4_a5wk3"]
+[ext_resource type="Script" path="res://PauseMenu.gd" id="5_fs7ua"]
+[ext_resource type="Script" path="res://PowerUpMenu.gd" id="6_664k3"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_wf74f")
+
+[node name="MeatPlayer" type="CharacterBody2D" parent="."]
+script = ExtResource("2_a50y4")
+
+[node name="MeatPlayerSprite" type="AnimatedSprite2D" parent="MeatPlayer"]
+
+[node name="MeatPlayerCollision" type="CollisionShape2D" parent="MeatPlayer"]
+
+[node name="MeatCurrentInteraction" type="Label" parent="MeatPlayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MeatInteraction" type="Area2D" parent="MeatPlayer"]
+
+[node name="Collision" type="CollisionShape2D" parent="MeatPlayer/MeatInteraction"]
+
+[node name="VegPlayer" type="CharacterBody2D" parent="."]
+script = ExtResource("3_jcb33")
+
+[node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
+
+[node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
+
+[node name="VegCurrentInteraction" type="Label" parent="VegPlayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VegInteraction" type="Area2D" parent="VegPlayer"]
+
+[node name="Collision" type="CollisionShape2D" parent="VegPlayer/VegInteraction"]
+
+[node name="NPC1" type="CharacterBody2D" parent="."]
+
+[node name="NPCSprite" type="AnimatedSprite2D" parent="NPC1"]
+
+[node name="NPCCollision" type="CollisionShape2D" parent="NPC1"]
+
+[node name="NPCCurrentInteraction" type="Label" parent="NPC1"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="NPCInteraction" type="Area2D" parent="NPC1"]
+
+[node name="Collision" type="CollisionShape2D" parent="NPC1/NPCInteraction"]
+
+[node name="NPCPathing" type="Node2D" parent="NPC1"]
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="PowerUpTimer" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_a5wk3")
+
+[node name="GameOverScreen" type="TextureRect" parent="UILayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenu" type="ColorRect" parent="UILayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_fs7ua")
+
+[node name="CenterContainer" type="CenterContainer" parent="UILayer/PauseMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/PauseMenu/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/PauseMenu/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ReturnToMenu" type="Button" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/PauseMenu"]
+
+[node name="PowerUpMenu" type="ColorRect" parent="UILayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_664k3")
+
+[node name="CenterContainer" type="CenterContainer" parent="UILayer/PowerUpMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/PowerUpMenu/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option1" type="Button" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option2" type="Button" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option3" type="Button" parent="UILayer/PowerUpMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/PowerUpMenu"]
+
+[node name="GameMainMusic" type="AudioStreamPlayer" parent="."]
