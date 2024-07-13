@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://brswfj3i23eoy"]
+[gd_scene load_steps=5 format=3 uid="uid://brswfj3i23eoy"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qh4ry"]
+[ext_resource type="Texture2D" uid="uid://dgm0jdnatlous" path="res://Icons/Play.jpg" id="2_gkcoj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c51gd"]
+
+[sub_resource type="FontVariation" id="FontVariation_qehan"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,23 +17,52 @@ grow_vertical = 2
 script = ExtResource("1_qh4ry")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_c51gd")
 
 [node name="GameName" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_top = 85.0
+offset_right = 224.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_qehan")
+theme_override_font_sizes/normal_font_size = 66
+text = "Game Name"
+autowrap_mode = 0
 
 [node name="FadeAway" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="StartGame" type="TextureButton" parent="."]
+z_index = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 479.0
+offset_top = 399.0
+offset_right = 727.0
+offset_bottom = 468.0
+texture_normal = ExtResource("2_gkcoj")
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://tk1x8eqfhynb"]
+[gd_scene load_steps=5 format=3 uid="uid://tk1x8eqfhynb"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_dl05t"]
+[ext_resource type="Texture2D" uid="uid://o4d07ycoghh6" path="res://Icons/game_over.jpg" id="2_s0bac"]
+[ext_resource type="Texture2D" uid="uid://cdresscppgwpl" path="res://Icons/Replay.jpg" id="3_kd0el"]
+[ext_resource type="Texture2D" uid="uid://uqsbva854wm6" path="res://Icons/Quit.jpg" id="4_u2ywq"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -12,23 +15,43 @@ grow_vertical = 2
 script = ExtResource("1_dl05t")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s0bac")
 
 [node name="FadeAway" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="TryAgain" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 274.0
+offset_top = 501.0
+offset_right = 522.0
+offset_bottom = 571.0
+texture_normal = ExtResource("3_kd0el")
 
 [node name="ToMainMenu" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 682.0
+offset_top = 500.0
+offset_right = 930.0
+offset_bottom = 570.0
+texture_normal = ExtResource("4_u2ywq")
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="ToMainMenu" to="." method="_on_to_main_menu_pressed"]

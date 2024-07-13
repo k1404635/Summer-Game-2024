@@ -58,6 +58,7 @@ offset_bottom = 23.0
 [node name="NPCPathing" type="Node2D" parent="NPC1"]
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
