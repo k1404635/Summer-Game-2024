@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5016qd8prodp"]
 
-[ext_resource type="Script" path="res://npc_path.gd" id="1_qtm3d"]
+[ext_resource type="Script" path="res://Scripts/npc_path.gd" id="1_qtm3d"]
 
 [sub_resource type="Curve2D" id="Curve2D_x4rxa"]
 
