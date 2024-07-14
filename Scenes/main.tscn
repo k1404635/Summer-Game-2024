@@ -6,17 +6,17 @@
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
 [ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/VegBack1.png" id="4_l36jq"]
 [ext_resource type="Texture2D" uid="uid://d0n1bmicfyj6q" path="res://Icons/VegBack2.png" id="5_14lcm"]
-[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="5_fs7ua"]
 [ext_resource type="Texture2D" uid="uid://7ro4xodnia4x" path="res://Icons/VegBackStill.png" id="6_3c77x"]
 [ext_resource type="Texture2D" uid="uid://nbwwdpq6llmj" path="res://Icons/VegFront1.png" id="6_11vv5"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
 [ext_resource type="Texture2D" uid="uid://clfln4lvde730" path="res://Icons/VegFront2.png" id="7_ebn8h"]
-[ext_resource type="AudioStream" uid="uid://du30wsh3v8sg4" path="res://Audio/MAIN THEME.mp3" id="7_vwb3a"]
 [ext_resource type="Texture2D" uid="uid://baws8rokam6yf" path="res://Icons/VegFrontStill.png" id="8_7nkkr"]
 [ext_resource type="Texture2D" uid="uid://c73io3dbf3nxy" path="res://Icons/VegLeftStill.png" id="9_a55bm"]
 [ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/VegLeft1.png" id="10_6aom6"]
 [ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/VegRightStill.png" id="12_xbw1v"]
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/VegRight1.png" id="13_iuxe6"]
+[ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
+[ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
 animations = [{
@@ -180,39 +180,6 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PauseMenu" type="ColorRect" parent="UILayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_fs7ua")
-
-[node name="CenterContainer" type="CenterContainer" parent="UILayer/PauseMenu"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PanelContainer" type="PanelContainer" parent="UILayer/PauseMenu/CenterContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/PauseMenu/CenterContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Resume" type="Button" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="ReturnToMenu" type="Button" parent="UILayer/PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/PauseMenu"]
-
 [node name="PowerUpMenu" type="ColorRect" parent="UILayer"]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -250,4 +217,8 @@ layout_mode = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/PowerUpMenu"]
 
 [node name="GameMainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_vwb3a")
+process_mode = 3
+stream = ExtResource("17_2cbpq")
+autoplay = true
+
+[node name="GUI" parent="." instance=ExtResource("18_46r3v")]
