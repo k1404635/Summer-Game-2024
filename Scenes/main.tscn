@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=38 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
-[ext_resource type="Texture2D" uid="uid://hbitdqthnp2i" path="res://Icons/Restaurant.png" id="24_vxv6i"]
+[ext_resource type="Texture2D" uid="uid://bpp0vsgvelvav" path="res://Icons/background.png" id="28_rlxle"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
@@ -364,7 +364,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_vxv6i")
+texture = ExtResource("28_rlxle")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -377,6 +377,6 @@ polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 1
 polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(950, 500)
+position = Vector2(843, 517)
 tile_set = SubResource("TileSet_7inhl")
 format = 2
