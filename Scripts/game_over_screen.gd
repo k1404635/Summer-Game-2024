@@ -1,7 +1,5 @@
 extends Control
 
-@onready var GLOBAL = get_node("/root/Global")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$GameOverMusic.play()
@@ -19,5 +17,4 @@ func _on_to_main_menu_pressed():
 
 
 func _on_try_again_pressed():
-	GLOBAL.reset()
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")

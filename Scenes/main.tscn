@@ -1,20 +1,77 @@
-[gd_scene load_steps=8 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=17 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
+[ext_resource type="Texture2D" uid="uid://b6ek2010odcyb" path="res://Icons/VegFront1.jpg" id="3_83jw1"]
 [ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="3_jcb33"]
+[ext_resource type="Texture2D" uid="uid://cmejgw04vuf8m" path="res://Icons/VegBack1.jpg" id="4_02fun"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
+[ext_resource type="Texture2D" uid="uid://iuuuqtcc4wd4" path="res://Icons/VegFront2.jpg" id="4_lec3r"]
+[ext_resource type="Texture2D" uid="uid://wl35bvwgsp6y" path="res://Icons/VegFront.jpg" id="5_5jyfq"]
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="5_fs7ua"]
+[ext_resource type="Texture2D" uid="uid://cqtgjw3vw1mkt" path="res://Icons/VegBack.jpg" id="5_ujr2s"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
+[ext_resource type="Texture2D" uid="uid://dftse7ffqmay8" path="res://Icons/VegLeftStill.jpg" id="6_vtjvj"]
+[ext_resource type="Texture2D" uid="uid://dfyvmdp21ev6c" path="res://Icons/VegLeft.jpg" id="7_h15p1"]
 [ext_resource type="AudioStream" uid="uid://du30wsh3v8sg4" path="res://Audio/MAIN THEME.mp3" id="7_vwb3a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
+animations = [{
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("4_02fun")
+}, {
+"duration": 1.7,
+"texture": ExtResource("5_ujr2s")
+}],
+"loop": true,
+"name": &"VegBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("3_83jw1")
+}, {
+"duration": 1.7,
+"texture": ExtResource("4_lec3r")
+}],
+"loop": true,
+"name": &"VegFront",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("6_vtjvj")
+}, {
+"duration": 1.7,
+"texture": ExtResource("7_h15p1")
+}],
+"loop": true,
+"name": &"VegLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5jyfq")
+}],
+"loop": true,
+"name": &"VegStill",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5wuk8"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_wf74f")
 
 [node name="MeatPlayer" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(950, 200)
 script = ExtResource("2_a50y4")
 
 [node name="MeatPlayerSprite" type="AnimatedSprite2D" parent="MeatPlayer"]
+scale = Vector2(0.507194, 0.457692)
+animation = &""
 
 [node name="MeatPlayerCollision" type="CollisionShape2D" parent="MeatPlayer"]
 
@@ -27,9 +84,15 @@ offset_bottom = 23.0
 [node name="Collision" type="CollisionShape2D" parent="MeatPlayer/MeatInteraction"]
 
 [node name="VegPlayer" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(225, 200)
 script = ExtResource("3_jcb33")
 
 [node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
+scale = Vector2(0.435252, 0.435252)
+sprite_frames = SubResource("SpriteFrames_bwmtd")
+animation = &"VegFront"
+frame_progress = 0.561656
 
 [node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
 
@@ -59,8 +122,12 @@ offset_bottom = 23.0
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(574.75, 322.25)
+scale = Vector2(1154.95, 648)
+texture = SubResource("CanvasTexture_5wuk8")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PowerUpTimer" type="Control" parent="UILayer"]
 layout_mode = 3
