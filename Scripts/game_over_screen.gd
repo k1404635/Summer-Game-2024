@@ -6,6 +6,8 @@ func _ready():
 	var fade = get_tree().create_tween()
 	fade.tween_property($FadeAway, "color", Color(0, 0, 0, 0), 5)
 	await get_tree().create_timer(5).timeout
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

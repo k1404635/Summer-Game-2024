@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rub2cbpyxjqa"]
 
-[ext_resource type="Script" path="res://GUI.gd" id="1_aglft"]
-[ext_resource type="PackedScene" uid="uid://dfa3r1j15a55f" path="res://pause_menu.tscn" id="1_ipydu"]
+[ext_resource type="Script" path="res://Scripts/GUI.gd" id="1_aglft"]
+[ext_resource type="PackedScene" uid="uid://dfa3r1j15a55f" path="res://Scenes/pause_menu.tscn" id="1_ipydu"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 10

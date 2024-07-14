@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/Players/VegRightStill.png" id="12_xbw1v"]
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
-[ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
+[ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://bpp0vsgvelvav" path="res://Icons/background.png" id="28_rlxle"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://tk1x8eqfhynb"]
+[gd_scene load_steps=5 format=3 uid="uid://tk1x8eqfhynb"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_dl05t"]
-[ext_resource type="Texture2D" uid="uid://o4d07ycoghh6" path="res://Icons/game_over.jpg" id="2_s0bac"]
 [ext_resource type="Texture2D" uid="uid://cdresscppgwpl" path="res://Icons/Replay.jpg" id="3_kd0el"]
 [ext_resource type="Texture2D" uid="uid://uqsbva854wm6" path="res://Icons/Quit.jpg" id="4_u2ywq"]
 [ext_resource type="AudioStream" uid="uid://3tn4mpxhciqt" path="res://Audio/Game Over.mp3" id="5_vt4nb"]
@@ -15,14 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dl05t")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_s0bac")
+color = Color(0, 0, 0, 1)
 
 [node name="FadeAway" type="ColorRect" parent="."]
 visible = false
@@ -36,20 +35,72 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="GameOver" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Score: "
+
+[node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "0
+"
+
+[node name="HighscoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Highscore" type="Label" parent="CenterContainer/VBoxContainer/HighscoreHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "High Score: "
+
+[node name="HighscoreValue" type="Label" parent="CenterContainer/VBoxContainer/HighscoreHBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "0
+"
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
 [node name="TryAgain" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 501.0
-offset_right = 522.0
-offset_bottom = 571.0
+offset_left = 434.0
+offset_top = 630.0
+offset_right = 682.0
+offset_bottom = 700.0
 texture_normal = ExtResource("3_kd0el")
 
 [node name="ToMainMenu" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 682.0
-offset_top = 500.0
-offset_right = 930.0
-offset_bottom = 570.0
+offset_left = 1180.0
+offset_top = 630.0
+offset_right = 1428.0
+offset_bottom = 700.0
 texture_normal = ExtResource("4_u2ywq")
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
