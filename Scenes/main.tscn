@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
-[ext_resource type="Texture2D" uid="uid://hbitdqthnp2i" path="res://Icons/Restaurant.png" id="24_vxv6i"]
+[ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
@@ -198,27 +198,33 @@ size = Vector2(25, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
 texture = ExtResource("29_1htrv")
-2:1/size_in_atlas = Vector2i(23, 19)
-2:1/0 = 0
-25:1/size_in_atlas = Vector2i(23, 19)
-25:1/0 = 0
-48:1/size_in_atlas = Vector2i(24, 19)
-48:1/0 = 0
-72:1/size_in_atlas = Vector2i(24, 19)
-72:1/0 = 0
-97:2/size_in_atlas = Vector2i(29, 18)
-97:2/0 = 0
-31:25/size_in_atlas = Vector2i(20, 20)
-31:25/0 = 0
-53:25/size_in_atlas = Vector2i(20, 22)
-53:25/0 = 0
-76:25/size_in_atlas = Vector2i(19, 22)
-76:25/0 = 0
-101:23/size_in_atlas = Vector2i(21, 24)
-101:23/0 = 0
+62:9/size_in_atlas = Vector2i(6, 6)
+62:9/0 = 0
+74:8/size_in_atlas = Vector2i(6, 6)
+74:8/0 = 0
+82:9/size_in_atlas = Vector2i(7, 5)
+82:9/0 = 0
+93:8/size_in_atlas = Vector2i(6, 7)
+93:8/0 = 0
+102:9/size_in_atlas = Vector2i(6, 6)
+102:9/0 = 0
+12:12/size_in_atlas = Vector2i(5, 5)
+12:12/0 = 0
+18:12/size_in_atlas = Vector2i(5, 5)
+18:12/0 = 0
+24:12/size_in_atlas = Vector2i(5, 5)
+24:12/0 = 0
+19:7/size_in_atlas = Vector2i(4, 4)
+19:7/0 = 0
+13:7/size_in_atlas = Vector2i(5, 4)
+13:7/0 = 0
+24:7/size_in_atlas = Vector2i(4, 4)
+24:7/0 = 0
+29:7/size_in_atlas = Vector2i(5, 4)
+29:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7inhl"]
-tile_size = Vector2i(80, 80)
+tile_size = Vector2i(70, 70)
 sources/3 = SubResource("TileSetAtlasSource_x6bp4")
 
 [node name="World" type="Node2D"]
@@ -350,13 +356,16 @@ autoplay = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1922.0
+offset_bottom = 1082.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_vxv6i")
+texture = ExtResource("28_5i8s2")
 
 [node name="Collisions" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 188, 132, 841, 131, 846, 585, 778, 584, 777, 610, 261, 611, 261, 584, 191, 584, 189, 295, 186, 247, 187, 132)
@@ -365,6 +374,7 @@ polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 1
 polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(950, 500)
+position = Vector2(950, 475)
 tile_set = SubResource("TileSet_7inhl")
 format = 2
+layer_0/tile_data = PackedInt32Array(-131083, 851971, 7, -11, 1900547, 7, -196615, 4063235, 9, -196616, 4063235, 9, -196614, 4063235, 9, -196613, 4063235, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 4849667, 8, 131067, 6684675, 9, 131066, 6684675, 9, 131065, 6684675, 9, 131063, 6684675, 9, 131064, 6684675, 9, 131062, 6684675, 9, 65525, 4849667, 8, -196612, 4063235, 9, 131068, 6684675, 9, 131061, 6684675, 9, -262141, 4063235, 9, -262140, 4063235, 9, -262139, 4063235, 9, -262138, 4063235, 9, -262137, 4063235, 9, -262135, 4063235, 9, -262136, 4063235, 9, -262134, 4063235, 9, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 4849667, 8, 65539, 6684675, 9, 65540, 6684675, 9, 65542, 6684675, 9, 65541, 6684675, 9, 65543, 6684675, 9, 65544, 6684675, 9, 65546, 6684675, 9, 65545, 6684675, 9, -196598, 1572867, 7, -131062, 5373955, 9, -65526, 5373955, 9, 10, 4849667, 8, -196617, 6094851, 8, -196619, 6094851, 8, -196618, 6094851, 8, -65547, 1245187, 7, 196598, 786435, 12, 196599, 786435, 12, 196600, 786435, 12, 196601, 786435, 12, 196602, 786435, 12, 196603, 786435, 12, 65533, 1179651, 12, -3, 1179651, 12, -65539, 1179651, 12, -131075, 1179651, 12, -196606, 1572867, 12, -131070, 1572867, 12, -65534, 1572867, 12, 2, 1572867, 12, 131076, 786435, 12, 131077, 786435, 12, 131079, 786435, 12, 131078, 786435, 12, 131080, 786435, 12, 131081, 786435, 12)
