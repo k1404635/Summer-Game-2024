@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=37 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://hbitdqthnp2i" path="res://Icons/Restaurant.png" id="24_vxv6i"]
+[ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
 animations = [{
@@ -195,6 +196,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4suad"]
 size = Vector2(25, 20)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
+texture = ExtResource("29_1htrv")
+2:1/size_in_atlas = Vector2i(23, 19)
+2:1/0 = 0
+25:1/size_in_atlas = Vector2i(23, 19)
+25:1/0 = 0
+48:1/size_in_atlas = Vector2i(24, 19)
+48:1/0 = 0
+72:1/size_in_atlas = Vector2i(24, 19)
+72:1/0 = 0
+97:2/size_in_atlas = Vector2i(29, 18)
+97:2/0 = 0
+31:25/size_in_atlas = Vector2i(20, 20)
+31:25/0 = 0
+53:25/size_in_atlas = Vector2i(20, 22)
+53:25/0 = 0
+76:25/size_in_atlas = Vector2i(19, 22)
+76:25/0 = 0
+101:23/size_in_atlas = Vector2i(21, 24)
+101:23/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7inhl"]
+tile_size = Vector2i(80, 80)
+sources/3 = SubResource("TileSetAtlasSource_x6bp4")
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_wf74f")
 
@@ -230,8 +256,9 @@ script = ExtResource("3_jcb33")
 [node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
 scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_bwmtd")
-animation = &"VegRight"
-frame_progress = 0.479296
+animation = &"VegBack"
+frame = 1
+frame_progress = 0.200027
 
 [node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
 position = Vector2(-6.5, 47)
@@ -336,3 +363,8 @@ polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 1
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(950, 500)
+tile_set = SubResource("TileSet_7inhl")
+format = 2
