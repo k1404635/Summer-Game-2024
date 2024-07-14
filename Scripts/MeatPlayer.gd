@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var all_interactions = []
 @onready var holding_object = []
+@onready var active = true
 
 # var in_interaction = false
 var interaction_timeout = 0
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	var direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 	
 	# x-axis movement
-	if not(frozen):
+	if not(frozen) and active:
 		if direction.x:
 			velocity.x = direction.x * SPEED * delta
 		else:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xqm6n8ipxt3"
-path="res://.godot/imported/VegBack1.png-661df04489ea64f86f12323dbd5ec761.ctex"
+uid="uid://ci6gwo8cl1vh3"
+path="res://.godot/imported/EggplantSack.png-f8b34a597ba0fe2898a40ed80d3ac441.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/VegBack1.png"
-dest_files=["res://.godot/imported/VegBack1.png-661df04489ea64f86f12323dbd5ec761.ctex"]
+source_file="res://Icons/KitchenEnvironment/EggplantSack.png"
+dest_files=["res://.godot/imported/EggplantSack.png-f8b34a597ba0fe2898a40ed80d3ac441.ctex"]
 
 [params]
 

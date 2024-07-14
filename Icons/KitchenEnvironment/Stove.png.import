@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7iy0hicl10oo"
-path="res://.godot/imported/VegRight1.png-d8ab5aec2eb377f657ff629b09a0af47.ctex"
+uid="uid://dpwr7amo8ki1p"
+path="res://.godot/imported/Stove.png-a5ca228b061f89a21441953eee11c9f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/VegRight1.png"
-dest_files=["res://.godot/imported/VegRight1.png-d8ab5aec2eb377f657ff629b09a0af47.ctex"]
+source_file="res://Icons/KitchenEnvironment/Stove.png"
+dest_files=["res://.godot/imported/Stove.png-a5ca228b061f89a21441953eee11c9f9.ctex"]
 
 [params]
 

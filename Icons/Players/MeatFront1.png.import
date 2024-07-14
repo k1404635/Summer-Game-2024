@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clfln4lvde730"
-path="res://.godot/imported/VegFront2.png-6f6162173d9b660f967cda9fa026536d.ctex"
+uid="uid://c1pedc08d0mq6"
+path="res://.godot/imported/MeatFront1.png-57f34752f82d3673f8a53a61eba17a87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/VegFront2.png"
-dest_files=["res://.godot/imported/VegFront2.png-6f6162173d9b660f967cda9fa026536d.ctex"]
+source_file="res://Icons/Players/MeatFront1.png"
+dest_files=["res://.godot/imported/MeatFront1.png-57f34752f82d3673f8a53a61eba17a87.ctex"]
 
 [params]
 

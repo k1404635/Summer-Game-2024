@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ro4xodnia4x"
-path="res://.godot/imported/VegBackStill.png-cb35631beed50cb9b5ead6b70aa6d7f3.ctex"
+uid="uid://1urd1b6uq5jg"
+path="res://.godot/imported/Tomato.png-554f69b066010c96d84e6530052215ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/VegBackStill.png"
-dest_files=["res://.godot/imported/VegBackStill.png-cb35631beed50cb9b5ead6b70aa6d7f3.ctex"]
+source_file="res://Icons/Food/Tomato.png"
+dest_files=["res://.godot/imported/Tomato.png-554f69b066010c96d84e6530052215ec.ctex"]
 
 [params]
 

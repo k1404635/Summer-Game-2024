@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baws8rokam6yf"
-path="res://.godot/imported/VegFrontStill.png-63ed50a9d9f806e20ef48200a0753443.ctex"
+uid="uid://lnp1pfdoyggg"
+path="res://.godot/imported/MeatBackStill.png-6274e79d67fe345e4e1a481d9070712f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/VegFrontStill.png"
-dest_files=["res://.godot/imported/VegFrontStill.png-63ed50a9d9f806e20ef48200a0753443.ctex"]
+source_file="res://Icons/Players/MeatBackStill.png"
+dest_files=["res://.godot/imported/MeatBackStill.png-6274e79d67fe345e4e1a481d9070712f.ctex"]
 
 [params]
 

@@ -1,22 +1,112 @@
-[gd_scene load_steps=20 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=31 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
+[ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="3_861wk"]
 [ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="3_jcb33"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
-[ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/VegBack1.png" id="4_l36jq"]
-[ext_resource type="Texture2D" uid="uid://d0n1bmicfyj6q" path="res://Icons/VegBack2.png" id="5_14lcm"]
-[ext_resource type="Texture2D" uid="uid://7ro4xodnia4x" path="res://Icons/VegBackStill.png" id="6_3c77x"]
-[ext_resource type="Texture2D" uid="uid://nbwwdpq6llmj" path="res://Icons/VegFront1.png" id="6_11vv5"]
+[ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/Players/VegBack1.png" id="4_l36jq"]
+[ext_resource type="Texture2D" uid="uid://b4p1t4yr7ljah" path="res://Icons/Players/MeatBack2.png" id="4_s4tgr"]
+[ext_resource type="Texture2D" uid="uid://d0n1bmicfyj6q" path="res://Icons/Players/VegBack2.png" id="5_14lcm"]
+[ext_resource type="Texture2D" uid="uid://lnp1pfdoyggg" path="res://Icons/Players/MeatBackStill.png" id="5_xbrtl"]
+[ext_resource type="Texture2D" uid="uid://7ro4xodnia4x" path="res://Icons/Players/VegBackStill.png" id="6_3c77x"]
+[ext_resource type="Texture2D" uid="uid://nbwwdpq6llmj" path="res://Icons/Players/VegFront1.png" id="6_11vv5"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
-[ext_resource type="Texture2D" uid="uid://clfln4lvde730" path="res://Icons/VegFront2.png" id="7_ebn8h"]
-[ext_resource type="Texture2D" uid="uid://baws8rokam6yf" path="res://Icons/VegFrontStill.png" id="8_7nkkr"]
-[ext_resource type="Texture2D" uid="uid://c73io3dbf3nxy" path="res://Icons/VegLeftStill.png" id="9_a55bm"]
-[ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/VegLeft1.png" id="10_6aom6"]
-[ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/VegRightStill.png" id="12_xbw1v"]
-[ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/VegRight1.png" id="13_iuxe6"]
+[ext_resource type="Texture2D" uid="uid://c1pedc08d0mq6" path="res://Icons/Players/MeatFront1.png" id="6_xkqj6"]
+[ext_resource type="Texture2D" uid="uid://clfln4lvde730" path="res://Icons/Players/VegFront2.png" id="7_ebn8h"]
+[ext_resource type="Texture2D" uid="uid://bg4x84w0cnep" path="res://Icons/Players/MeatFront2.png" id="7_f8b8s"]
+[ext_resource type="Texture2D" uid="uid://dh1m0tw86oxsc" path="res://Icons/Players/MeatFrontStill.png" id="8_02w81"]
+[ext_resource type="Texture2D" uid="uid://baws8rokam6yf" path="res://Icons/Players/VegFrontStill.png" id="8_7nkkr"]
+[ext_resource type="Texture2D" uid="uid://c73io3dbf3nxy" path="res://Icons/Players/VegLeftStill.png" id="9_a55bm"]
+[ext_resource type="Texture2D" uid="uid://igbfi1o8fe5" path="res://Icons/Players/MeatLeftStill.png" id="9_d5pfa"]
+[ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/Players/VegLeft1.png" id="10_6aom6"]
+[ext_resource type="Texture2D" uid="uid://beglhcuidkhhu" path="res://Icons/Players/MeatLeft1.png" id="10_bn4cr"]
+[ext_resource type="Texture2D" uid="uid://durx62ccne15" path="res://Icons/Players/MeatRightStill.png" id="11_bgbfn"]
+[ext_resource type="Texture2D" uid="uid://dj5vpa4tnjys4" path="res://Icons/Players/MeatRight1.png" id="12_j6m5y"]
+[ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/Players/VegRightStill.png" id="12_xbw1v"]
+[ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
+[ext_resource type="Texture2D" uid="uid://hbitdqthnp2i" path="res://Icons/Restaurant.png" id="24_vxv6i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
+animations = [{
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("3_861wk")
+}, {
+"duration": 1.7,
+"texture": ExtResource("4_s4tgr")
+}],
+"loop": true,
+"name": &"MeatBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xbrtl")
+}],
+"loop": true,
+"name": &"MeatBackStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("6_xkqj6")
+}, {
+"duration": 1.7,
+"texture": ExtResource("7_f8b8s")
+}],
+"loop": true,
+"name": &"MeatFront",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_02w81")
+}],
+"loop": true,
+"name": &"MeatFrontStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("9_d5pfa")
+}, {
+"duration": 1.7,
+"texture": ExtResource("10_bn4cr")
+}],
+"loop": true,
+"name": &"MeatLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_d5pfa")
+}],
+"loop": true,
+"name": &"MeatLeftStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("11_bgbfn")
+}, {
+"duration": 1.7,
+"texture": ExtResource("12_j6m5y")
+}],
+"loop": true,
+"name": &"MeatRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bgbfn")
+}],
+"loop": true,
+"name": &"MeatRightStill",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
 animations = [{
@@ -97,19 +187,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_5wuk8"]
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_wf74f")
 
 [node name="MeatPlayer" type="CharacterBody2D" parent="."]
 z_index = 10
-position = Vector2(950, 200)
+position = Vector2(1400, 350)
 script = ExtResource("2_a50y4")
 
 [node name="MeatPlayerSprite" type="AnimatedSprite2D" parent="MeatPlayer"]
-scale = Vector2(0.507194, 0.457692)
-animation = &""
+scale = Vector2(0.0839071, 0.0757178)
+sprite_frames = SubResource("SpriteFrames_xxkhc")
+animation = &"MeatRight"
+frame_progress = 0.588908
 
 [node name="MeatPlayerCollision" type="CollisionShape2D" parent="MeatPlayer"]
 
@@ -123,15 +213,14 @@ offset_bottom = 23.0
 
 [node name="VegPlayer" type="CharacterBody2D" parent="."]
 z_index = 10
-position = Vector2(225, 200)
+position = Vector2(510, 350)
 script = ExtResource("3_jcb33")
 
 [node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
 scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_bwmtd")
-animation = &"VegLeft"
-frame = 1
-frame_progress = 0.423684
+animation = &"VegRight"
+frame_progress = 0.479296
 
 [node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
 
@@ -158,12 +247,6 @@ offset_bottom = 23.0
 [node name="Collision" type="CollisionShape2D" parent="NPC1/NPCInteraction"]
 
 [node name="NPCPathing" type="Node2D" parent="NPC1"]
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(574.75, 322.25)
-scale = Vector2(1154.95, 648)
-texture = SubResource("CanvasTexture_5wuk8")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 visible = false
@@ -222,3 +305,13 @@ stream = ExtResource("17_2cbpq")
 autoplay = true
 
 [node name="GUI" parent="." instance=ExtResource("18_46r3v")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_vxv6i")
