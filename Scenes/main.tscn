@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=35 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
@@ -108,8 +108,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0moo"]
-size = Vector2(26, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uve6"]
+radius = 16.0
+height = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k46nq"]
 
@@ -192,8 +193,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4suad"]
-size = Vector2(25, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u3ft"]
+radius = 15.5
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjudb"]
+radius = 16.0
+height = 64.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_wf74f")
@@ -209,15 +215,16 @@ sprite_frames = SubResource("SpriteFrames_xxkhc")
 animation = &"MeatRight"
 frame_progress = 0.588908
 
-[node name="MeatPlayerCollision" type="CollisionShape2D" parent="MeatPlayer"]
-position = Vector2(8, 47)
-shape = SubResource("RectangleShape2D_a0moo")
+[node name="Useless" type="CollisionShape2D" parent="MeatPlayer"]
+position = Vector2(8, 27)
+shape = SubResource("CapsuleShape2D_6uve6")
 
 [node name="MeatCurrentInteraction" type="Label" parent="MeatPlayer"]
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="MeatInteraction" type="Area2D" parent="MeatPlayer"]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="MeatPlayer/MeatInteraction"]
 shape = SubResource("RectangleShape2D_k46nq")
@@ -233,9 +240,10 @@ sprite_frames = SubResource("SpriteFrames_bwmtd")
 animation = &"VegRight"
 frame_progress = 0.479296
 
-[node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
-position = Vector2(-6.5, 47)
-shape = SubResource("RectangleShape2D_4suad")
+[node name="Useless" type="CollisionShape2D" parent="VegPlayer"]
+visible = false
+position = Vector2(-6.5, 24)
+shape = SubResource("CapsuleShape2D_8u3ft")
 
 [node name="VegCurrentInteraction" type="Label" parent="VegPlayer"]
 offset_right = 40.0
@@ -244,6 +252,8 @@ offset_bottom = 23.0
 [node name="VegInteraction" type="Area2D" parent="VegPlayer"]
 
 [node name="Collision" type="CollisionShape2D" parent="VegPlayer/VegInteraction"]
+position = Vector2(-7, 26)
+shape = SubResource("CapsuleShape2D_mjudb")
 
 [node name="NPC1" type="CharacterBody2D" parent="."]
 
@@ -329,10 +339,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("24_vxv6i")
 
-[node name="Collisions" type="Area2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
 polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 188, 132, 841, 131, 846, 585, 778, 584, 777, 610, 261, 611, 261, 584, 191, 584, 189, 295, 186, 247, 187, 132)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
 polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)

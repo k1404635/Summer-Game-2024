@@ -89,6 +89,3 @@ func execute_interactions():
 		var cur_interaction = all_interactions[0]
 		
 		# if cur_interaction is a placeable location, then place it down on the counter
-		
-
-	
