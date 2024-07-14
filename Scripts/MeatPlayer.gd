@@ -60,7 +60,7 @@ func _physics_process(delta):
 			$MeatPlayerSprite.play("MeatBack")
 		
 		if (direction == Vector2.ZERO) and ($MeatPlayerSprite.animation == "MeatFront"):
-			$MeatPlayerSprite.animation = "MeatStill"
+			$MeatPlayerSprite.animation = "MeatFrontStill"
 		if (direction == Vector2.ZERO) and ($MeatPlayerSprite.animation == "MeatBack"):
 			$MeatPlayerSprite.animation = "MeatBackStill"
 		if (direction == Vector2.ZERO) and ($MeatPlayerSprite.animation == "MeatLeft"):

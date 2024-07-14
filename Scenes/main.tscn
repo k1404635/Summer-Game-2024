@@ -1,50 +1,69 @@
-[gd_scene load_steps=17 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=20 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
-[ext_resource type="Texture2D" uid="uid://b6ek2010odcyb" path="res://Icons/VegFront1.jpg" id="3_83jw1"]
 [ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="3_jcb33"]
-[ext_resource type="Texture2D" uid="uid://cmejgw04vuf8m" path="res://Icons/VegBack1.jpg" id="4_02fun"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
-[ext_resource type="Texture2D" uid="uid://iuuuqtcc4wd4" path="res://Icons/VegFront2.jpg" id="4_lec3r"]
-[ext_resource type="Texture2D" uid="uid://wl35bvwgsp6y" path="res://Icons/VegFront.jpg" id="5_5jyfq"]
+[ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/VegBack1.png" id="4_l36jq"]
+[ext_resource type="Texture2D" uid="uid://d0n1bmicfyj6q" path="res://Icons/VegBack2.png" id="5_14lcm"]
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="5_fs7ua"]
-[ext_resource type="Texture2D" uid="uid://cqtgjw3vw1mkt" path="res://Icons/VegBack.jpg" id="5_ujr2s"]
+[ext_resource type="Texture2D" uid="uid://7ro4xodnia4x" path="res://Icons/VegBackStill.png" id="6_3c77x"]
+[ext_resource type="Texture2D" uid="uid://nbwwdpq6llmj" path="res://Icons/VegFront1.png" id="6_11vv5"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
-[ext_resource type="Texture2D" uid="uid://dftse7ffqmay8" path="res://Icons/VegLeftStill.jpg" id="6_vtjvj"]
-[ext_resource type="Texture2D" uid="uid://dfyvmdp21ev6c" path="res://Icons/VegLeft.jpg" id="7_h15p1"]
+[ext_resource type="Texture2D" uid="uid://clfln4lvde730" path="res://Icons/VegFront2.png" id="7_ebn8h"]
 [ext_resource type="AudioStream" uid="uid://du30wsh3v8sg4" path="res://Audio/MAIN THEME.mp3" id="7_vwb3a"]
+[ext_resource type="Texture2D" uid="uid://baws8rokam6yf" path="res://Icons/VegFrontStill.png" id="8_7nkkr"]
+[ext_resource type="Texture2D" uid="uid://c73io3dbf3nxy" path="res://Icons/VegLeftStill.png" id="9_a55bm"]
+[ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/VegLeft1.png" id="10_6aom6"]
+[ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/VegRightStill.png" id="12_xbw1v"]
+[ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/VegRight1.png" id="13_iuxe6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
 animations = [{
 "frames": [{
 "duration": 1.7,
-"texture": ExtResource("4_02fun")
+"texture": ExtResource("4_l36jq")
 }, {
 "duration": 1.7,
-"texture": ExtResource("5_ujr2s")
+"texture": ExtResource("5_14lcm")
 }],
 "loop": true,
 "name": &"VegBack",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3c77x")
+}],
+"loop": true,
+"name": &"VegBackStill",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.7,
-"texture": ExtResource("3_83jw1")
+"texture": ExtResource("6_11vv5")
 }, {
 "duration": 1.7,
-"texture": ExtResource("4_lec3r")
+"texture": ExtResource("7_ebn8h")
 }],
 "loop": true,
 "name": &"VegFront",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7nkkr")
+}],
+"loop": true,
+"name": &"VegFrontStill",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.7,
-"texture": ExtResource("6_vtjvj")
+"texture": ExtResource("9_a55bm")
 }, {
 "duration": 1.7,
-"texture": ExtResource("7_h15p1")
+"texture": ExtResource("10_6aom6")
 }],
 "loop": true,
 "name": &"VegLeft",
@@ -52,10 +71,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_5jyfq")
+"texture": ExtResource("9_a55bm")
 }],
 "loop": true,
-"name": &"VegStill",
+"name": &"VegLeftStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("12_xbw1v")
+}, {
+"duration": 1.7,
+"texture": ExtResource("13_iuxe6")
+}],
+"loop": true,
+"name": &"VegRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xbw1v")
+}],
+"loop": true,
+"name": &"VegRightStill",
 "speed": 5.0
 }]
 
@@ -89,10 +127,11 @@ position = Vector2(225, 200)
 script = ExtResource("3_jcb33")
 
 [node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
-scale = Vector2(0.435252, 0.435252)
+scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_bwmtd")
-animation = &"VegFront"
-frame_progress = 0.561656
+animation = &"VegLeft"
+frame = 1
+frame_progress = 0.423684
 
 [node name="VegPlayerCollision" type="CollisionShape2D" parent="VegPlayer"]
 

@@ -60,7 +60,7 @@ func _physics_process(delta):
 			$VegPlayerSprite.play("VegBack")
 		
 		if (direction == Vector2.ZERO) and ($VegPlayerSprite.animation == "VegFront"):
-			$VegPlayerSprite.animation = "VegStill"
+			$VegPlayerSprite.animation = "VegFrontStill"
 		if (direction == Vector2.ZERO) and ($VegPlayerSprite.animation == "VegBack"):
 			$VegPlayerSprite.animation = "VegBackStill"
 		if (direction == Vector2.ZERO) and ($VegPlayerSprite.animation == "VegLeft"):
