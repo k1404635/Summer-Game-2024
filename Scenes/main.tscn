@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=48 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/Players/VegRightStill.png" id="12_xbw1v"]
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
-[ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://GUI.tscn" id="18_46r3v"]
+[ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 
@@ -199,8 +199,8 @@ radius = 15.5
 height = 68.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjudb"]
-radius = 16.0
-height = 64.0
+radius = 21.0
+height = 70.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
 texture = ExtResource("29_1htrv")
@@ -232,6 +232,36 @@ texture = ExtResource("29_1htrv")
 [sub_resource type="TileSet" id="TileSet_7inhl"]
 tile_size = Vector2i(70, 70)
 sources/3 = SubResource("TileSetAtlasSource_x6bp4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dai"]
+size = Vector2(71, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fthwn"]
+size = Vector2(71.5, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjuf"]
+size = Vector2(70.25, 76.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy6pj"]
+size = Vector2(72.5, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e17g2"]
+size = Vector2(69, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbr7j"]
+size = Vector2(72, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkolx"]
+size = Vector2(69, 69.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkuvy"]
+size = Vector2(69.5, 62.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_101jn"]
+size = Vector2(70, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kr0h"]
+size = Vector2(75.5, 69.5)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_wf74f")
@@ -285,7 +315,7 @@ offset_bottom = 23.0
 [node name="VegInteraction" type="Area2D" parent="VegPlayer"]
 
 [node name="Collision" type="CollisionShape2D" parent="VegPlayer/VegInteraction"]
-position = Vector2(-7, 26)
+position = Vector2(-2, 26)
 shape = SubResource("CapsuleShape2D_mjudb")
 
 [node name="NPC1" type="CharacterBody2D" parent="."]
@@ -374,19 +404,181 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("28_5i8s2")
 
-[node name="Collisions" type="Area2D" parent="."]
-visible = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-
-[node name="VegEnvironment" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
-polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 188, 132, 841, 131, 846, 585, 778, 584, 777, 610, 261, 611, 261, 584, 191, 584, 189, 295, 186, 247, 187, 132)
-
-[node name="MeatEnvironment" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
-polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(950, 475)
 tile_set = SubResource("TileSet_7inhl")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131083, 851971, 7, -11, 1900547, 7, -196615, 4063235, 9, -196616, 4063235, 9, -196614, 4063235, 9, -196613, 4063235, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 4849667, 8, 131067, 6684675, 9, 131066, 6684675, 9, 131065, 6684675, 9, 131063, 6684675, 9, 131064, 6684675, 9, 131062, 6684675, 9, 65525, 4849667, 8, -196612, 4063235, 9, 131068, 6684675, 9, 131061, 6684675, 9, -262141, 4063235, 9, -262140, 4063235, 9, -262139, 4063235, 9, -262138, 4063235, 9, -262137, 4063235, 9, -262135, 4063235, 9, -262136, 4063235, 9, -262134, 4063235, 9, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 4849667, 8, 65539, 6684675, 9, 65540, 6684675, 9, 65542, 6684675, 9, 65541, 6684675, 9, 65543, 6684675, 9, 65544, 6684675, 9, 65546, 6684675, 9, 65545, 6684675, 9, -196598, 1572867, 7, -131062, 5373955, 9, -65526, 5373955, 9, 10, 4849667, 8, -196617, 6094851, 8, -196619, 6094851, 8, -196618, 6094851, 8, -65547, 1245187, 7, 196598, 786435, 12, 196599, 786435, 12, 196600, 786435, 12, 196601, 786435, 12, 196602, 786435, 12, 196603, 786435, 12, 65533, 1179651, 12, -3, 1179651, 12, -65539, 1179651, 12, -131075, 1179651, 12, -196606, 1572867, 12, -131070, 1572867, 12, -65534, 1572867, 12, 2, 1572867, 12, 131076, 786435, 12, 131077, 786435, 12, 131079, 786435, 12, 131078, 786435, 12, 131080, 786435, 12, 131081, 786435, 12)
+layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, 131062, 786435, 12, 131063, 786435, 12, 131065, 786435, 12, 131066, 786435, 12, 131067, 786435, 12, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -131075, 1179651, 12, -65539, 1179651, 12, -3, 1179651, 12, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -196611, 1179651, 12, -196606, 1572867, 12, -131070, 1572867, 12, -65534, 1572867, 12, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, 65540, 786435, 12, 65541, 786435, 12, 65542, 786435, 12, 65543, 786435, 12, 65544, 786435, 12, 65545, 786435, 12, -262134, 1572867, 7, 10, 6684675, 9, -262142, 1572867, 12, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, 131064, 786435, 12, 393226, 786435, 12, 393225, 786435, 12, 393224, 786435, 12, 393223, 786435, 12, 393222, 786435, 12, 393221, 786435, 12, 393220, 786435, 12, 393219, 786435, 12, 393218, 786435, 12, 393217, 786435, 12, 393216, 786435, 12, 458751, 786435, 12, 458750, 786435, 12, 458749, 786435, 12, 458748, 786435, 12, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
+
+[node name="EnvironmentStaticBody" type="StaticBody2D" parent="."]
+
+[node name="WallsEnvironmentCollision" type="CollisionPolygon2D" parent="EnvironmentStaticBody"]
+polygon = PackedVector2Array(181, 116, 1739, 122, 1740, 958, 609, 959, 609, 974, 1920, 973, 1921, -1, 1, 1, 0, 974, 467, 974, 467, 958, 179, 959, 181, 545)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnvironmentStaticBody"]
+polygon = PackedVector2Array(1, 972, 1, 1079, 1921, 1081, 1922, 972, 609, 974, 609, 959, 1920, 958, 1972, 1107, 245, 1101, -23, 1097, -21, 960)
+
+[node name="VegStaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="VegChop1" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(285.5, 160.5)
+shape = SubResource("RectangleShape2D_x1dai")
+
+[node name="VegChop2" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(356.25, 160.5)
+shape = SubResource("RectangleShape2D_fthwn")
+
+[node name="VegChop3" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(425.75, 161)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter1" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(495, 163)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter2" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(564, 162)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter3" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(634, 164.75)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter4" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(212.75, 434.5)
+shape = SubResource("RectangleShape2D_cy6pj")
+
+[node name="table1" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(702.5, 224.5)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table2" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(701, 295)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table3" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(703, 366)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table4" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(703, 435)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table5" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(637, 505.5)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table6" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(567, 506)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table7" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(497, 506)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table8" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(427, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table9" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(357, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table10" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(288, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="TomatoSack" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(216.5, 229.5)
+shape = SubResource("RectangleShape2D_bkolx")
+
+[node name="CabbageSack" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(217, 300)
+shape = SubResource("RectangleShape2D_bkolx")
+
+[node name="EggplantSack" type="CollisionShape2D" parent="VegStaticBody2D"]
+position = Vector2(215.25, 366.75)
+shape = SubResource("RectangleShape2D_xkuvy")
+
+[node name="MeatStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(976, -4)
+
+[node name="counter1" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(290, 167)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter2" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(360, 167)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter3" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(430, 166)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter4" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(499, 168)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter5" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(570, 169)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="counter6" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(641, 169)
+shape = SubResource("RectangleShape2D_jvjuf")
+
+[node name="table1" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(214, 230)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table2" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(214, 299)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table3" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(217, 369)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table4" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(217, 436)
+shape = SubResource("RectangleShape2D_e17g2")
+
+[node name="table5" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(641, 508)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table6" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(571, 506)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table7" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(500, 506)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table8" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(431, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table9" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(360, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="table10" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(288, 507)
+shape = SubResource("RectangleShape2D_rbr7j")
+
+[node name="MeatSack" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(710, 235)
+shape = SubResource("RectangleShape2D_101jn")
+
+[node name="Stove1" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(708.25, 301.25)
+shape = SubResource("RectangleShape2D_7kr0h")
+
+[node name="Stove2" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(709, 371)
+shape = SubResource("RectangleShape2D_7kr0h")
+
+[node name="Stove3" type="CollisionShape2D" parent="MeatStaticBody2D"]
+position = Vector2(710, 440)
+shape = SubResource("RectangleShape2D_7kr0h")
