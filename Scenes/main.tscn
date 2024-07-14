@@ -343,8 +343,11 @@ texture = ExtResource("24_vxv6i")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+[node name="VegEnvironment" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
 polygon = PackedVector2Array(258, 198, 258, 525, 774, 525, 771, 197, 258, 197, 188, 132, 841, 131, 846, 585, 778, 584, 777, 610, 261, 611, 261, 584, 191, 584, 189, 295, 186, 247, 187, 132)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+[node name="MeatEnvironment" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
 polygon = PackedVector2Array(1070, 132, 1724, 129, 1725, 579, 1663, 584, 1660, 611, 1147, 614, 1144, 583, 1075, 587, 1072, 227, 1142, 227, 1145, 526, 1658, 525, 1659, 502, 1651, 481, 1654, 195, 1140, 198, 1141, 225, 1070, 228)
+
+[node name="OutsideEnvironment" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+polygon = PackedVector2Array(-1, 972, 464, 972, 469, 956, 179, 956, 180, 118, 1737, 118, 1736, 957, 606, 957, 606, 970, 1750, 972, 1920, 970, 1921, 1, -2, -2)
