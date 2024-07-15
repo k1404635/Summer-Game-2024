@@ -1,6 +1,5 @@
-[gd_scene load_steps=48 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=49 format=3 uid="uid://big526h2iki81"]
 
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_wf74f"]
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
 [ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="3_861wk"]
 [ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="3_jcb33"]
@@ -27,8 +26,62 @@
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
+[ext_resource type="PackedScene" uid="uid://5016qd8prodp" path="res://Scenes/npc_path.tscn" id="24_7nxba"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
+
+[sub_resource type="GDScript" id="GDScript_s5cgh"]
+script/source = "extends Node2D
+
+@export var PLAYER_VELOCITY = 10
+
+@onready var score_label: Label = $Score
+
+var Score = 0
+var highscore = 0 # setting highscore to 0 here is a bad idea (have to look up how to keep track of it - maybe use global??)
+var current_item = \"\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$MeatPlayer.position = Vector2(1400, 350)
+	$VegPlayer.position = Vector2(510, 350)
+	# might be nice to put a freeze here and then say the instructions before starting (add this last since we might not have enough time)
+	# add_player_interactives()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	# NPC handling (look this up)
+	
+	# handle creating and being able to get food items (look this up too)
+	
+	# Pausing
+	if Input.is_action_just_pressed(\"Pause\"): 
+		if $UILayer/PauseMenu.visible:
+			$UILayer/PauseMenu.unpause()
+			$UILayer/PauseMenu.visible = false
+		else:
+			$UILayer/PauseMenu.pause()
+			$UILayer/PauseMenu.visible = true
+
+func _input(event):
+	if Input.is_action_pressed(\"Switch Characters\"):
+		var temp_state = $VegPlayer.active
+		$VegPlayer.active = $MeatPlayer.active
+		$MeatPlayer.active = temp_state
+			
+# add a function that checks if life or mad customer count has reached game end amount and act accordingly
+# add functions for player interactions with items
+
+func freeze():
+	# make current player frozen
+	# go through all the npcs and make them all frozen too
+	pass
+
+func unfreeze():
+	# unfreeze for the same as above
+	pass
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
 animations = [{
@@ -264,7 +317,7 @@ size = Vector2(70, 62)
 size = Vector2(75.5, 69.5)
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_wf74f")
+script = SubResource("GDScript_s5cgh")
 
 [node name="MeatPlayer" type="CharacterBody2D" parent="."]
 z_index = 10
@@ -333,6 +386,10 @@ offset_bottom = 23.0
 [node name="Collision" type="CollisionShape2D" parent="NPC1/NPCInteraction"]
 
 [node name="NPCPathing" type="Node2D" parent="NPC1"]
+
+[node name="NPCPath" parent="NPC1/NPCPathing" instance=ExtResource("24_7nxba")]
+z_index = 1
+position = Vector2(-73.2534, -32.531)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 visible = false
@@ -582,3 +639,13 @@ shape = SubResource("RectangleShape2D_7kr0h")
 [node name="Stove3" type="CollisionShape2D" parent="MeatStaticBody2D"]
 position = Vector2(710, 440)
 shape = SubResource("RectangleShape2D_7kr0h")
+
+[node name="Score" type="Label" parent="."]
+z_index = 10
+offset_left = 6.0
+offset_top = 1014.0
+offset_right = 1919.0
+offset_bottom = 1077.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "Score: "

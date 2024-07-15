@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qh4ry"]
 [ext_resource type="Texture2D" uid="uid://dgm0jdnatlous" path="res://Icons/Play.jpg" id="2_gkcoj"]
-[ext_resource type="Script" path="res://Scenes/score.gd" id="2_w71u2"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="2_w71u2"]
 [ext_resource type="AudioStream" uid="uid://du30wsh3v8sg4" path="res://Audio/MAIN THEME.mp3" id="3_wnr7y"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c51gd"]
