@@ -1,5 +1,8 @@
 extends Control
 
+@onready var score_value: Label = %ScoreValue
+@onready var highscore_value: Label = %HighscoreValue
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$GameOverMusic.play()

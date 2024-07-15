@@ -63,6 +63,7 @@ theme_override_font_sizes/font_size = 45
 text = "Score: "
 
 [node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "0
@@ -78,6 +79,7 @@ theme_override_font_sizes/font_size = 45
 text = "High Score: "
 
 [node name="HighscoreValue" type="Label" parent="CenterContainer/VBoxContainer/HighscoreHBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "0
