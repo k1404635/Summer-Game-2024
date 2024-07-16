@@ -135,13 +135,13 @@ script = SubResource("GDScript_s5cgh")
 
 [node name="VegStaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="VegCollision" type="CollisionPolygon2D" parent="VegStaticBody2D"]
+[node name="VegActualCollision" type="CollisionPolygon2D" parent="VegStaticBody2D"]
 polygon = PackedVector2Array(250, 197, 665, 201, 666, 468, 247, 468, 185, 541, 742, 540, 745, 469, 730, 469, 734, 189, 742, 189, 745, 128, 180, 118, 181, 540, 248, 467)
 
 [node name="MeatStaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(976, -4)
 
-[node name="MeatCollision" type="CollisionPolygon2D" parent="MeatStaticBody2D"]
+[node name="MeatActualCollision" type="CollisionPolygon2D" parent="MeatStaticBody2D"]
 polygon = PackedVector2Array(251, 204, 256, 472, 674, 469, 674, 204, 747, 134, 750, 545, 184, 544, 184, 132, 746, 132, 674, 204)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
