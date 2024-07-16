@@ -1,34 +1,12 @@
-[gd_scene load_steps=52 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=23 format=3 uid="uid://big526h2iki81"]
 
-[ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
-[ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="3_861wk"]
-[ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="3_jcb33"]
+[ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
+[ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://veg_player.tscn" id="2_efkfk"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
-[ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/Players/VegBack1.png" id="4_l36jq"]
-[ext_resource type="Texture2D" uid="uid://b4p1t4yr7ljah" path="res://Icons/Players/MeatBack2.png" id="4_s4tgr"]
-[ext_resource type="Texture2D" uid="uid://d0n1bmicfyj6q" path="res://Icons/Players/VegBack2.png" id="5_14lcm"]
-[ext_resource type="Texture2D" uid="uid://lnp1pfdoyggg" path="res://Icons/Players/MeatBackStill.png" id="5_xbrtl"]
-[ext_resource type="Texture2D" uid="uid://7ro4xodnia4x" path="res://Icons/Players/VegBackStill.png" id="6_3c77x"]
-[ext_resource type="Texture2D" uid="uid://nbwwdpq6llmj" path="res://Icons/Players/VegFront1.png" id="6_11vv5"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
-[ext_resource type="Texture2D" uid="uid://c1pedc08d0mq6" path="res://Icons/Players/MeatFront1.png" id="6_xkqj6"]
-[ext_resource type="Texture2D" uid="uid://clfln4lvde730" path="res://Icons/Players/VegFront2.png" id="7_ebn8h"]
-[ext_resource type="Texture2D" uid="uid://bg4x84w0cnep" path="res://Icons/Players/MeatFront2.png" id="7_f8b8s"]
-[ext_resource type="Texture2D" uid="uid://dh1m0tw86oxsc" path="res://Icons/Players/MeatFrontStill.png" id="8_02w81"]
-[ext_resource type="Texture2D" uid="uid://baws8rokam6yf" path="res://Icons/Players/VegFrontStill.png" id="8_7nkkr"]
-[ext_resource type="Texture2D" uid="uid://c73io3dbf3nxy" path="res://Icons/Players/VegLeftStill.png" id="9_a55bm"]
-[ext_resource type="Texture2D" uid="uid://igbfi1o8fe5" path="res://Icons/Players/MeatLeftStill.png" id="9_d5pfa"]
-[ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/Players/VegLeft1.png" id="10_6aom6"]
-[ext_resource type="Texture2D" uid="uid://beglhcuidkhhu" path="res://Icons/Players/MeatLeft1.png" id="10_bn4cr"]
-[ext_resource type="Texture2D" uid="uid://durx62ccne15" path="res://Icons/Players/MeatRightStill.png" id="11_bgbfn"]
-[ext_resource type="Texture2D" uid="uid://dj5vpa4tnjys4" path="res://Icons/Players/MeatRight1.png" id="12_j6m5y"]
-[ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/Players/VegRightStill.png" id="12_xbw1v"]
-[ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
+[ext_resource type="PackedScene" uid="uid://cjum8kqqtym2i" path="res://Scenes/npc1_going_in_path_1.tscn" id="9_j8dnx"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
-[ext_resource type="Texture2D" uid="uid://5bfa2gdo7vx6" path="res://Icons/NPCs/NPC1Front.png" id="23_1e4dd"]
-[ext_resource type="PackedScene" uid="uid://5016qd8prodp" path="res://Scenes/npc_path.tscn" id="24_7nxba"]
-[ext_resource type="Texture2D" uid="uid://v21joxokljv6" path="res://Icons/NPCs/NPC1Back.png" id="24_wpvvr"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://Icons/tilemap.png" id="29_1htrv"]
 
@@ -85,223 +63,6 @@ func unfreeze():
 	pass
 "
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
-animations = [{
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("3_861wk")
-}, {
-"duration": 1.7,
-"texture": ExtResource("4_s4tgr")
-}],
-"loop": true,
-"name": &"MeatBack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_xbrtl")
-}],
-"loop": true,
-"name": &"MeatBackStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("6_xkqj6")
-}, {
-"duration": 1.7,
-"texture": ExtResource("7_f8b8s")
-}],
-"loop": true,
-"name": &"MeatFront",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_02w81")
-}],
-"loop": true,
-"name": &"MeatFrontStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("9_d5pfa")
-}, {
-"duration": 1.7,
-"texture": ExtResource("10_bn4cr")
-}],
-"loop": true,
-"name": &"MeatLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_d5pfa")
-}],
-"loop": true,
-"name": &"MeatLeftStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("11_bgbfn")
-}, {
-"duration": 1.7,
-"texture": ExtResource("12_j6m5y")
-}],
-"loop": true,
-"name": &"MeatRight",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_bgbfn")
-}],
-"loop": true,
-"name": &"MeatRightStill",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uve6"]
-radius = 16.0
-height = 64.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k46nq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
-animations = [{
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("4_l36jq")
-}, {
-"duration": 1.7,
-"texture": ExtResource("5_14lcm")
-}],
-"loop": true,
-"name": &"VegBack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_3c77x")
-}],
-"loop": true,
-"name": &"VegBackStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("6_11vv5")
-}, {
-"duration": 1.7,
-"texture": ExtResource("7_ebn8h")
-}],
-"loop": true,
-"name": &"VegFront",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_7nkkr")
-}],
-"loop": true,
-"name": &"VegFrontStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("9_a55bm")
-}, {
-"duration": 1.7,
-"texture": ExtResource("10_6aom6")
-}],
-"loop": true,
-"name": &"VegLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_a55bm")
-}],
-"loop": true,
-"name": &"VegLeftStill",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.7,
-"texture": ExtResource("12_xbw1v")
-}, {
-"duration": 1.7,
-"texture": ExtResource("13_iuxe6")
-}],
-"loop": true,
-"name": &"VegRight",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_xbw1v")
-}],
-"loop": true,
-"name": &"VegRightStill",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u3ft"]
-radius = 15.5
-height = 68.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjudb"]
-radius = 21.0
-height = 70.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yvrt2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_1e4dd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_wpvvr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
-texture = ExtResource("29_1htrv")
-62:9/size_in_atlas = Vector2i(6, 6)
-62:9/0 = 0
-74:8/size_in_atlas = Vector2i(6, 6)
-74:8/0 = 0
-82:9/size_in_atlas = Vector2i(7, 5)
-82:9/0 = 0
-93:8/size_in_atlas = Vector2i(6, 7)
-93:8/0 = 0
-102:9/size_in_atlas = Vector2i(6, 6)
-102:9/0 = 0
-12:12/size_in_atlas = Vector2i(5, 5)
-12:12/0 = 0
-18:12/size_in_atlas = Vector2i(5, 5)
-18:12/0 = 0
-24:12/size_in_atlas = Vector2i(5, 5)
-24:12/0 = 0
-19:7/size_in_atlas = Vector2i(4, 4)
-19:7/0 = 0
-13:7/size_in_atlas = Vector2i(5, 4)
-13:7/0 = 0
-24:7/size_in_atlas = Vector2i(4, 4)
-24:7/0 = 0
-29:7/size_in_atlas = Vector2i(5, 4)
-29:7/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_7inhl"]
-tile_size = Vector2i(70, 70)
-sources/3 = SubResource("TileSetAtlasSource_x6bp4")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dai"]
 size = Vector2(71, 77)
 
@@ -332,83 +93,43 @@ size = Vector2(70, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kr0h"]
 size = Vector2(75.5, 69.5)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
+texture = ExtResource("29_1htrv")
+62:9/size_in_atlas = Vector2i(6, 6)
+62:9/0 = 0
+74:8/size_in_atlas = Vector2i(6, 6)
+74:8/0 = 0
+82:9/size_in_atlas = Vector2i(7, 5)
+82:9/0 = 0
+93:8/size_in_atlas = Vector2i(6, 7)
+93:8/0 = 0
+102:9/size_in_atlas = Vector2i(6, 6)
+102:9/0 = 0
+12:12/size_in_atlas = Vector2i(5, 5)
+12:12/0 = 0
+18:12/size_in_atlas = Vector2i(5, 5)
+18:12/0 = 0
+24:12/size_in_atlas = Vector2i(5, 5)
+24:12/0 = 0
+19:7/size_in_atlas = Vector2i(4, 4)
+19:7/0 = 0
+13:7/size_in_atlas = Vector2i(5, 4)
+13:7/0 = 0
+24:7/size_in_atlas = Vector2i(4, 4)
+24:7/0 = 0
+29:7/size_in_atlas = Vector2i(5, 4)
+29:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uhoth"]
+tile_size = Vector2i(70, 70)
+sources/3 = SubResource("TileSetAtlasSource_x6bp4")
+
 [node name="World" type="Node2D"]
 script = SubResource("GDScript_s5cgh")
 
-[node name="MeatPlayer" type="CharacterBody2D" parent="."]
-z_index = 10
-position = Vector2(1400, 350)
-script = ExtResource("2_a50y4")
+[node name="MeatPlayer" parent="." instance=ExtResource("1_m5qir")]
 
-[node name="MeatPlayerSprite" type="AnimatedSprite2D" parent="MeatPlayer"]
-scale = Vector2(0.0839071, 0.0757178)
-sprite_frames = SubResource("SpriteFrames_xxkhc")
-animation = &"MeatRight"
-frame_progress = 0.449803
-
-[node name="Useless" type="CollisionShape2D" parent="MeatPlayer"]
-visible = false
-position = Vector2(8, 27)
-shape = SubResource("CapsuleShape2D_6uve6")
-
-[node name="MeatCurrentInteraction" type="Label" parent="MeatPlayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="MeatInteraction" type="Area2D" parent="MeatPlayer"]
-visible = false
-
-[node name="Collision" type="CollisionShape2D" parent="MeatPlayer/MeatInteraction"]
-shape = SubResource("RectangleShape2D_k46nq")
-
-[node name="VegPlayer" type="CharacterBody2D" parent="."]
-z_index = 10
-position = Vector2(510, 350)
-script = ExtResource("3_jcb33")
-
-[node name="VegPlayerSprite" type="AnimatedSprite2D" parent="VegPlayer"]
-scale = Vector2(0.08, 0.08)
-sprite_frames = SubResource("SpriteFrames_bwmtd")
-animation = &"VegBack"
-
-[node name="Useless" type="CollisionShape2D" parent="VegPlayer"]
-visible = false
-position = Vector2(-6.5, 24)
-shape = SubResource("CapsuleShape2D_8u3ft")
-
-[node name="VegCurrentInteraction" type="Label" parent="VegPlayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="VegInteraction" type="Area2D" parent="VegPlayer"]
-visible = false
-
-[node name="Collision" type="CollisionShape2D" parent="VegPlayer/VegInteraction"]
-position = Vector2(-2, 26)
-shape = SubResource("CapsuleShape2D_mjudb")
-
-[node name="NPC1" type="CharacterBody2D" parent="."]
-visible = false
-
-[node name="NPCSprite" type="AnimatedSprite2D" parent="NPC1"]
-sprite_frames = SubResource("SpriteFrames_yvrt2")
-frame_progress = 0.45589
-
-[node name="NPCCollision" type="CollisionShape2D" parent="NPC1"]
-
-[node name="NPCCurrentInteraction" type="Label" parent="NPC1"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="NPCInteraction" type="Area2D" parent="NPC1"]
-
-[node name="Collision" type="CollisionShape2D" parent="NPC1/NPCInteraction"]
-
-[node name="NPCPathing" type="Node2D" parent="NPC1"]
-
-[node name="NPCPath" parent="NPC1/NPCPathing" instance=ExtResource("24_7nxba")]
-z_index = 1
-position = Vector2(-73.2534, -32.531)
+[node name="VegPlayer" parent="." instance=ExtResource("2_efkfk")]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 visible = false
@@ -479,12 +200,6 @@ offset_bottom = 1082.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("28_5i8s2")
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(950, 475)
-tile_set = SubResource("TileSet_7inhl")
-format = 2
-layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, 131062, 786435, 12, 131063, 786435, 12, 131065, 786435, 12, 131066, 786435, 12, 131067, 786435, 12, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -131075, 1179651, 12, -65539, 1179651, 12, -3, 1179651, 12, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -196611, 1179651, 12, -196606, 1572867, 12, -131070, 1572867, 12, -65534, 1572867, 12, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, 65540, 786435, 12, 65541, 786435, 12, 65542, 786435, 12, 65543, 786435, 12, 65544, 786435, 12, 65545, 786435, 12, -262134, 1572867, 7, 10, 6684675, 9, -262142, 1572867, 12, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, 131064, 786435, 12, 393226, 786435, 12, 393225, 786435, 12, 393224, 786435, 12, 393223, 786435, 12, 393222, 786435, 12, 393221, 786435, 12, 393220, 786435, 12, 393219, 786435, 12, 393218, 786435, 12, 393217, 786435, 12, 393216, 786435, 12, 458751, 786435, 12, 458750, 786435, 12, 458749, 786435, 12, 458748, 786435, 12, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
 
 [node name="EnvironmentStaticBody" type="StaticBody2D" parent="."]
 
@@ -671,4 +386,12 @@ offset_right = 1919.0
 offset_bottom = 1077.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
-text = "Score: "
+text = "Tutorial"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(950, 475)
+tile_set = SubResource("TileSet_uhoth")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, -262134, 1572867, 7, 10, 6684675, 9, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
+
+[node name="Path2D" parent="." instance=ExtResource("9_j8dnx")]

@@ -1,0 +1,124 @@
+[gd_scene load_steps=15 format=3 uid="uid://b80oxjmy8lgn6"]
+
+[ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="1_0sif0"]
+[ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="2_w5tas"]
+[ext_resource type="Texture2D" uid="uid://b4p1t4yr7ljah" path="res://Icons/Players/MeatBack2.png" id="3_7dk8f"]
+[ext_resource type="Texture2D" uid="uid://lnp1pfdoyggg" path="res://Icons/Players/MeatBackStill.png" id="4_pntxs"]
+[ext_resource type="Texture2D" uid="uid://c1pedc08d0mq6" path="res://Icons/Players/MeatFront1.png" id="5_bec2g"]
+[ext_resource type="Texture2D" uid="uid://bg4x84w0cnep" path="res://Icons/Players/MeatFront2.png" id="6_qjlkr"]
+[ext_resource type="Texture2D" uid="uid://dh1m0tw86oxsc" path="res://Icons/Players/MeatFrontStill.png" id="7_0v5ko"]
+[ext_resource type="Texture2D" uid="uid://igbfi1o8fe5" path="res://Icons/Players/MeatLeftStill.png" id="8_tui8k"]
+[ext_resource type="Texture2D" uid="uid://beglhcuidkhhu" path="res://Icons/Players/MeatLeft1.png" id="9_yc1w7"]
+[ext_resource type="Texture2D" uid="uid://durx62ccne15" path="res://Icons/Players/MeatRightStill.png" id="10_md2lk"]
+[ext_resource type="Texture2D" uid="uid://dj5vpa4tnjys4" path="res://Icons/Players/MeatRight1.png" id="11_5gyvu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
+animations = [{
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("2_w5tas")
+}, {
+"duration": 1.7,
+"texture": ExtResource("3_7dk8f")
+}],
+"loop": true,
+"name": &"MeatBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pntxs")
+}],
+"loop": true,
+"name": &"MeatBackStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("5_bec2g")
+}, {
+"duration": 1.7,
+"texture": ExtResource("6_qjlkr")
+}],
+"loop": true,
+"name": &"MeatFront",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0v5ko")
+}],
+"loop": true,
+"name": &"MeatFrontStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("8_tui8k")
+}, {
+"duration": 1.7,
+"texture": ExtResource("9_yc1w7")
+}],
+"loop": true,
+"name": &"MeatLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tui8k")
+}],
+"loop": true,
+"name": &"MeatLeftStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("10_md2lk")
+}, {
+"duration": 1.7,
+"texture": ExtResource("11_5gyvu")
+}],
+"loop": true,
+"name": &"MeatRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_md2lk")
+}],
+"loop": true,
+"name": &"MeatRightStill",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uve6"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k46nq"]
+
+[node name="MeatPlayer" type="CharacterBody2D"]
+z_index = 10
+position = Vector2(1400, 350)
+script = ExtResource("1_0sif0")
+
+[node name="MeatPlayerSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0839071, 0.0757178)
+sprite_frames = SubResource("SpriteFrames_xxkhc")
+animation = &"MeatRight"
+frame_progress = 0.449803
+
+[node name="Useless" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(8, 27)
+shape = SubResource("CapsuleShape2D_6uve6")
+
+[node name="MeatCurrentInteraction" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MeatInteraction" type="Area2D" parent="."]
+visible = false
+
+[node name="Collision" type="CollisionShape2D" parent="MeatInteraction"]
+shape = SubResource("RectangleShape2D_k46nq")
