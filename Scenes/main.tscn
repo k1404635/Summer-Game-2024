@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=52 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="2_a50y4"]
 [ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="3_861wk"]
@@ -26,7 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="13_iuxe6"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
+[ext_resource type="Texture2D" uid="uid://5bfa2gdo7vx6" path="res://Icons/NPCs/NPC1Front.png" id="23_1e4dd"]
 [ext_resource type="PackedScene" uid="uid://5016qd8prodp" path="res://Scenes/npc_path.tscn" id="24_7nxba"]
+[ext_resource type="Texture2D" uid="uid://v21joxokljv6" path="res://Icons/NPCs/NPC1Back.png" id="24_wpvvr"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://tilemap.png" id="29_1htrv"]
 
@@ -255,6 +257,20 @@ height = 68.0
 radius = 21.0
 height = 70.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvrt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_1e4dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wpvvr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6bp4"]
 texture = ExtResource("29_1htrv")
 62:9/size_in_atlas = Vector2i(6, 6)
@@ -328,7 +344,7 @@ script = ExtResource("2_a50y4")
 scale = Vector2(0.0839071, 0.0757178)
 sprite_frames = SubResource("SpriteFrames_xxkhc")
 animation = &"MeatRight"
-frame_progress = 0.588908
+frame_progress = 0.449803
 
 [node name="Useless" type="CollisionShape2D" parent="MeatPlayer"]
 visible = false
@@ -354,8 +370,6 @@ script = ExtResource("3_jcb33")
 scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_bwmtd")
 animation = &"VegBack"
-frame = 1
-frame_progress = 0.200027
 
 [node name="Useless" type="CollisionShape2D" parent="VegPlayer"]
 visible = false
@@ -377,6 +391,8 @@ shape = SubResource("CapsuleShape2D_mjudb")
 visible = false
 
 [node name="NPCSprite" type="AnimatedSprite2D" parent="NPC1"]
+sprite_frames = SubResource("SpriteFrames_yvrt2")
+frame_progress = 0.45589
 
 [node name="NPCCollision" type="CollisionShape2D" parent="NPC1"]
 

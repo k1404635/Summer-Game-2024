@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://5016qd8prodp"]
+[gd_scene load_steps=7 format=3 uid="uid://5016qd8prodp"]
 
 [ext_resource type="Script" path="res://Scripts/npc_path.gd" id="1_qtm3d"]
+[ext_resource type="Texture2D" uid="uid://v21joxokljv6" path="res://Icons/NPCs/NPC1Back.png" id="2_g03kt"]
 
 [sub_resource type="Curve2D" id="Curve2D_x4rxa"]
 _data = {
@@ -8,12 +9,35 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="Animation" id="Animation_g8xpd"]
-resource_name = "npc_front"
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eyf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g03kt")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_npm3y"]
+[sub_resource type="Animation" id="Animation_eoucw"]
+resource_name = "npc_bouce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwbn0"]
 _data = {
-"npc_front": SubResource("Animation_g8xpd")
+"npc_bouce": SubResource("Animation_eoucw")
 }
 
 [node name="NPCPath" type="Path2D"]
@@ -29,8 +53,14 @@ rotation = -0.686222
 [node name="NPC" type="CharacterBody2D" parent="NPCPathFollow"]
 
 [node name="NPCSprite" type="AnimatedSprite2D" parent="NPCPathFollow/NPC"]
+position = Vector2(-6.06231, -0.0200672)
+rotation = 0.678933
+scale = Vector2(0.0647104, 0.0702437)
+sprite_frames = SubResource("SpriteFrames_3eyf7")
+animation = &"back"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPCPathFollow/NPC"]
+root_node = NodePath("../NPCSprite")
 libraries = {
-"": SubResource("AnimationLibrary_npm3y")
+"": SubResource("AnimationLibrary_uwbn0")
 }
