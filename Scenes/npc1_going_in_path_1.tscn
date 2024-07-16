@@ -12,9 +12,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_b4jal"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 495, 1078, 0, 0, 0, 0, 542, 897, 0, 0, 0, 0, 769, 776, 0, 0, 0, 0, 1017, 772, 0, 0, 0, 0, 1316, 771, 0, 0, 0, 0, 1521, 750, 0, 0, 0, 0, 1610, 668, 0, 0, 0, 0, 1617, 557)
+"points": PackedVector2Array(0, 0, 0, 0, 495, 1078, 0, 0, 0, 0, 542, 897, 0, 0, 0, 0, 769, 776, 0, 0, 0, 0, 954, 719, 0, 0, 0, 0, 1128, 678, 0, 0, 0, 0, 1264, 648, 0, 0, 0, 0, 1263, 557)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmyyt"]
 animations = [{
