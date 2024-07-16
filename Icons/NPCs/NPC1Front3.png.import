@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwo76auis7heq"
-path="res://.godot/imported/tomatos.png-ff162371b506d57769aa0e3fa640de28.ctex"
+uid="uid://1ul6sn0o6res"
+path="res://.godot/imported/NPC1Front3.png-77f0e0b56efd64f020a5e1a99cd56bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tomatos.png"
-dest_files=["res://.godot/imported/tomatos.png-ff162371b506d57769aa0e3fa640de28.ctex"]
+source_file="res://Icons/NPCs/NPC1Front3.png"
+dest_files=["res://.godot/imported/NPC1Front3.png-77f0e0b56efd64f020a5e1a99cd56bfc.ctex"]
 
 [params]
 
