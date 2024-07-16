@@ -331,6 +331,7 @@ animation = &"MeatRight"
 frame_progress = 0.588908
 
 [node name="Useless" type="CollisionShape2D" parent="MeatPlayer"]
+visible = false
 position = Vector2(8, 27)
 shape = SubResource("CapsuleShape2D_6uve6")
 
@@ -366,12 +367,14 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="VegInteraction" type="Area2D" parent="VegPlayer"]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="VegPlayer/VegInteraction"]
 position = Vector2(-2, 26)
 shape = SubResource("CapsuleShape2D_mjudb")
 
 [node name="NPC1" type="CharacterBody2D" parent="."]
+visible = false
 
 [node name="NPCSprite" type="AnimatedSprite2D" parent="NPC1"]
 
@@ -470,12 +473,15 @@ layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -
 [node name="EnvironmentStaticBody" type="StaticBody2D" parent="."]
 
 [node name="WallsEnvironmentCollision" type="CollisionPolygon2D" parent="EnvironmentStaticBody"]
+visible = false
 polygon = PackedVector2Array(181, 116, 1739, 122, 1740, 958, 609, 959, 609, 974, 1920, 973, 1921, -1, 1, 1, 0, 974, 467, 974, 467, 958, 179, 959, 181, 545)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnvironmentStaticBody"]
+visible = false
 polygon = PackedVector2Array(1, 972, 1, 1079, 1921, 1081, 1922, 972, 609, 974, 609, 959, 1920, 958, 1972, 1107, 245, 1101, -23, 1097, -21, 960)
 
 [node name="VegStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="VegChop1" type="CollisionShape2D" parent="VegStaticBody2D"]
 position = Vector2(285.5, 160.5)
@@ -558,6 +564,7 @@ position = Vector2(215.25, 366.75)
 shape = SubResource("RectangleShape2D_xkuvy")
 
 [node name="MeatStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(976, -4)
 
 [node name="counter1" type="CollisionShape2D" parent="MeatStaticBody2D"]
