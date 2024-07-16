@@ -81,7 +81,7 @@ script = ExtResource("1_abhjq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
 z_index = 2
-scale = Vector2(0.082, 0.082)
+scale = Vector2(0.095, 0.095)
 sprite_frames = SubResource("SpriteFrames_rmyyt")
 animation = &"NPC1Back"
 frame_progress = 0.536807
