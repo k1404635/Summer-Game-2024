@@ -69,7 +69,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Path2D" type="Path2D"]
+[node name="NPC1_going_in_1" type="Path2D"]
 curve = SubResource("Curve2D_b4jal")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -81,7 +81,7 @@ script = ExtResource("1_abhjq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
 z_index = 2
-scale = Vector2(0.095, 0.095)
+scale = Vector2(0.082, 0.082)
 sprite_frames = SubResource("SpriteFrames_rmyyt")
 animation = &"NPC1Back"
 frame_progress = 0.536807
