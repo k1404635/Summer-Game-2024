@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxgt275bl3byk"]
+[gd_scene load_steps=12 format=3 uid="uid://dxgt275bl3byk"]
 
 [ext_resource type="Script" path="res://Scripts/npc2_going_in_path.gd" id="1_0kjd8"]
 [ext_resource type="Texture2D" uid="uid://bysp4fld4vllu" path="res://Icons/NPCs/NPC2Back2.png" id="2_bo8cp"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://6lit5y6qusj8" path="res://Icons/NPCs/NPC2Front2.png" id="7_4l0ys"]
 [ext_resource type="Texture2D" uid="uid://dkkmn3o1n2r4b" path="res://Icons/NPCs/NPC2Front1.png" id="8_10mar"]
 [ext_resource type="Texture2D" uid="uid://ebwqvlwv4o04" path="res://Icons/NPCs/NPC2Front.png" id="9_3c70e"]
-[ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="10_xwann"]
 
 [sub_resource type="Curve2D" id="Curve2D_mxwaf"]
 _data = {
@@ -85,16 +84,3 @@ z_index = 1
 scale = Vector2(0.095, 0.095)
 sprite_frames = SubResource("SpriteFrames_ljnjt")
 animation = &"NPC2Front"
-
-[node name="Background" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1922.0
-offset_bottom = 1082.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_xwann")

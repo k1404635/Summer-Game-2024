@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=26 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
 [ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://Scenes/veg_player.tscn" id="2_efkfk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjum8kqqtym2i" path="res://Scenes/npc1_going_in_path_1.tscn" id="9_j8dnx"]
 [ext_resource type="PackedScene" uid="uid://bw6fbqchaioo4" path="res://Scenes/npc_2_going_in_1.tscn" id="10_yrnxi"]
 [ext_resource type="PackedScene" uid="uid://dxgt275bl3byk" path="res://Scenes/npc_2_going_in_2.tscn" id="11_m2c7k"]
+[ext_resource type="PackedScene" uid="uid://bxgthf3qsu8q3" path="res://Scenes/npc1_going_in_path_2.tscn" id="12_ms5wp"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
@@ -122,7 +123,7 @@ texture = ExtResource("29_1htrv")
 29:7/size_in_atlas = Vector2i(5, 4)
 29:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_26pp8"]
+[sub_resource type="TileSet" id="TileSet_grbma"]
 tile_size = Vector2i(70, 70)
 sources/3 = SubResource("TileSetAtlasSource_x6bp4")
 
@@ -399,14 +400,19 @@ theme_override_font_sizes/font_size = 45
 text = "Tutorial"
 
 [node name="NPC1_going_in_1" parent="." instance=ExtResource("9_j8dnx")]
+z_index = 1
 
-[node name="NPC2_going_in_1" parent="." instance=ExtResource("10_yrnxi")]
+[node name="NPC1_going_in_2" parent="." instance=ExtResource("12_ms5wp")]
 z_index = 3
 
+[node name="NPC2_going_in_1" parent="." instance=ExtResource("10_yrnxi")]
+z_index = 2
+
 [node name="NPC2_going_in_2" parent="." instance=ExtResource("11_m2c7k")]
+z_index = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(950, 475)
-tile_set = SubResource("TileSet_26pp8")
+tile_set = SubResource("TileSet_grbma")
 format = 2
 layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, -262134, 1572867, 7, 10, 6684675, 9, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
