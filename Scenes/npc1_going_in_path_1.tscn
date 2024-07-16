@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/npc1_going_in_path.gd" id="1_abhjq"]
 [ext_resource type="Texture2D" uid="uid://v21joxokljv6" path="res://Icons/NPCs/NPC1Back.png" id="2_i37kb"]
 [ext_resource type="Texture2D" uid="uid://dc85n1nuwcn01" path="res://Icons/NPCs/NPC1Back1.png" id="2_sagen"]
-[ext_resource type="Texture2D" uid="uid://dcppq62l3wdc2" path="res://Icons/NPCs/NPC1Front3.png" id="3_qjp4d"]
+[ext_resource type="Texture2D" uid="uid://1ul6sn0o6res" path="res://Icons/NPCs/NPC1Front3.png" id="3_qjp4d"]
 [ext_resource type="Texture2D" uid="uid://dasawd3qee1hj" path="res://Icons/NPCs/NPC1Back3.png" id="3_tdn0w"]
-[ext_resource type="Texture2D" uid="uid://moywxbapmstt" path="res://Icons/NPCs/NPC1Front2.png" id="4_64360"]
+[ext_resource type="Texture2D" uid="uid://d3bh7hmat3pod" path="res://Icons/NPCs/NPC1Front2.png" id="4_64360"]
 [ext_resource type="Texture2D" uid="uid://2fgbulaeemdb" path="res://Icons/NPCs/NPC1Back2.png" id="4_qn015"]
-[ext_resource type="Texture2D" uid="uid://dssob0ic670fc" path="res://Icons/NPCs/NPC1Front1.png" id="5_vuldr"]
+[ext_resource type="Texture2D" uid="uid://c2kemk4o5gnpc" path="res://Icons/NPCs/NPC1Front1.png" id="5_vuldr"]
 [ext_resource type="Texture2D" uid="uid://5bfa2gdo7vx6" path="res://Icons/NPCs/NPC1Front.png" id="6_15gej"]
 
 [sub_resource type="Curve2D" id="Curve2D_b4jal"]
@@ -69,7 +69,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Path2D" type="Path2D"]
+[node name="NPC1_going_in_1" type="Path2D"]
 curve = SubResource("Curve2D_b4jal")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
