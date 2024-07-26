@@ -5,6 +5,6 @@ extends PathFollow2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	set_progress(get_progress() + moveSpeed * delta)
-	$AnimatedSprite2D.play("NPC2Back")
+	$AnimatedSprite2D.play("NPC2Front")
 	if (get_progress_ratio() == 1):
-		$AnimatedSprite2D.play("NPC2BackStill")
+		$AnimatedSprite2D.play("NPC2FrontStill")

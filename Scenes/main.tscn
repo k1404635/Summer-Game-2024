@@ -1,17 +1,37 @@
-[gd_scene load_steps=26 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=46 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
 [ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://Scenes/veg_player.tscn" id="2_efkfk"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
-[ext_resource type="PackedScene" uid="uid://cjum8kqqtym2i" path="res://Scenes/npc1_going_in_path_1.tscn" id="9_j8dnx"]
-[ext_resource type="PackedScene" uid="uid://bw6fbqchaioo4" path="res://Scenes/npc_2_going_in_1.tscn" id="10_yrnxi"]
-[ext_resource type="PackedScene" uid="uid://dxgt275bl3byk" path="res://Scenes/npc_2_going_in_2.tscn" id="11_m2c7k"]
-[ext_resource type="PackedScene" uid="uid://bxgthf3qsu8q3" path="res://Scenes/npc1_going_in_path_2.tscn" id="12_ms5wp"]
+[ext_resource type="PackedScene" uid="uid://cjum8kqqtym2i" path="res://Scenes/npc1_going_in_1.tscn" id="9_j8dnx"]
+[ext_resource type="PackedScene" uid="uid://bw6fbqchaioo4" path="res://Scenes/npc2_going_in_1.tscn" id="10_yrnxi"]
+[ext_resource type="PackedScene" uid="uid://dxgt275bl3byk" path="res://Scenes/npc2_going_in_2.tscn" id="11_m2c7k"]
+[ext_resource type="PackedScene" uid="uid://bxgthf3qsu8q3" path="res://Scenes/npc1_going_in_2.tscn" id="12_ms5wp"]
+[ext_resource type="PackedScene" uid="uid://cfuandmcgxlbe" path="res://Scenes/npc1_going_in_5.tscn" id="12_ndlqu"]
+[ext_resource type="PackedScene" uid="uid://m8upxk88fd50" path="res://Scenes/npc1_going_in_4.tscn" id="13_3vfxv"]
+[ext_resource type="PackedScene" uid="uid://cvsifulpcn85c" path="res://Scenes/npc1_going_in_3.tscn" id="13_6yxff"]
+[ext_resource type="PackedScene" uid="uid://dc0oq4xujixja" path="res://Scenes/npc1_going_in_6.tscn" id="13_jj4ck"]
+[ext_resource type="PackedScene" uid="uid://dyogrh2lw3l47" path="res://Scenes/npc2_going_in_3.tscn" id="14_q2mtx"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
+[ext_resource type="PackedScene" uid="uid://ci7xdpkrgatxo" path="res://Scenes/npc2_going_in_4.tscn" id="17_5ylq7"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
+[ext_resource type="PackedScene" uid="uid://tqsfydd0jsaa" path="res://Scenes/npc2_going_in_5.tscn" id="19_xr1ht"]
+[ext_resource type="PackedScene" uid="uid://chm3v43yxytfa" path="res://Scenes/npc2_going_in_6.tscn" id="20_03a8q"]
+[ext_resource type="PackedScene" uid="uid://bt0qeioysfeat" path="res://Scenes/npc1_going_out_1.tscn" id="21_bt0lr"]
+[ext_resource type="PackedScene" uid="uid://bloh0esx343tg" path="res://Scenes/npc1_going_out_2.tscn" id="22_j8jt2"]
+[ext_resource type="PackedScene" uid="uid://dfcat03fhsrib" path="res://Scenes/npc1_going_out_3.tscn" id="23_8kb1v"]
+[ext_resource type="PackedScene" uid="uid://wi27wgnirq6p" path="res://Scenes/npc1_going_out_4.tscn" id="24_7w1sk"]
+[ext_resource type="PackedScene" uid="uid://didnjmx75euh1" path="res://Scenes/npc1_going_out_5.tscn" id="25_yq2u1"]
+[ext_resource type="PackedScene" uid="uid://3b5pm2fe1grt" path="res://Scenes/npc1_going_out_6.tscn" id="26_nanof"]
+[ext_resource type="PackedScene" uid="uid://cbiylbmwg2b2w" path="res://Scenes/npc2_going_out_1.tscn" id="27_nrxki"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
+[ext_resource type="PackedScene" uid="uid://dvv88ic4kuta5" path="res://Scenes/npc2_going_out_2.tscn" id="28_ja7aq"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://Icons/tilemap.png" id="29_1htrv"]
+[ext_resource type="PackedScene" uid="uid://wudbfu0v8dtk" path="res://Scenes/npc2_going_out_3.tscn" id="29_nu4hn"]
+[ext_resource type="PackedScene" uid="uid://dyl8g50g82x6b" path="res://Scenes/npc2_going_out_4.tscn" id="30_22fa1"]
+[ext_resource type="PackedScene" uid="uid://js0a8540f4h7" path="res://Scenes/npc2_going_out_5.tscn" id="31_mhtxp"]
+[ext_resource type="PackedScene" uid="uid://m73n07t0wf1a" path="res://Scenes/npc2_going_out_6.tscn" id="32_mjhxg"]
 
 [sub_resource type="GDScript" id="GDScript_s5cgh"]
 script/source = "extends Node2D
@@ -123,7 +143,7 @@ texture = ExtResource("29_1htrv")
 29:7/size_in_atlas = Vector2i(5, 4)
 29:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_grbma"]
+[sub_resource type="TileSet" id="TileSet_ibw2q"]
 tile_size = Vector2i(70, 70)
 sources/3 = SubResource("TileSetAtlasSource_x6bp4")
 
@@ -389,9 +409,9 @@ shape = SubResource("RectangleShape2D_7kr0h")
 position = Vector2(1686, 436)
 shape = SubResource("RectangleShape2D_7kr0h")
 
-[node name="Label" type="Label" parent="."]
+[node name="Score" type="Label" parent="."]
 z_index = 10
-offset_left = 6.0
+offset_left = 1384.0
 offset_top = 1014.0
 offset_right = 1919.0
 offset_bottom = 1077.0
@@ -399,20 +419,87 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "Tutorial"
 
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(950, 475)
+tile_set = SubResource("TileSet_ibw2q")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, -262134, 1572867, 7, 10, 6684675, 9, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
+
 [node name="NPC1_going_in_1" parent="." instance=ExtResource("9_j8dnx")]
+visible = false
 z_index = 1
 
 [node name="NPC1_going_in_2" parent="." instance=ExtResource("12_ms5wp")]
+visible = false
 z_index = 3
 
+[node name="NPC1_going_in_3" parent="." instance=ExtResource("13_6yxff")]
+visible = false
+z_index = 5
+
+[node name="NPC1_going_in_4" parent="." instance=ExtResource("13_3vfxv")]
+visible = false
+z_index = 6
+
+[node name="NPC1_going_in_5" parent="." instance=ExtResource("12_ndlqu")]
+visible = false
+
+[node name="NPC1_going_in_6" parent="." instance=ExtResource("13_jj4ck")]
+visible = false
+
 [node name="NPC2_going_in_1" parent="." instance=ExtResource("10_yrnxi")]
+visible = false
 z_index = 2
 
 [node name="NPC2_going_in_2" parent="." instance=ExtResource("11_m2c7k")]
+visible = false
 z_index = 4
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(950, 475)
-tile_set = SubResource("TileSet_grbma")
-format = 2
-layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -262151, 4063235, 9, -262150, 4063235, 9, -262149, 4063235, 9, -262148, 4063235, 9, -131083, 1245187, 7, -65547, 1900547, 7, -11, 4849667, 8, 65525, 6684675, 9, -131076, 4849667, 8, -65540, 4849667, 8, -4, 4849667, 8, 65532, 6684675, 9, -196619, 851971, 7, 65526, 6684675, 9, 65527, 6684675, 9, 65528, 6684675, 9, 65529, 6684675, 9, 65530, 6684675, 9, 65531, 6684675, 9, -196612, 4849667, 8, -262141, 4849667, 8, -196605, 4849667, 8, -131069, 4849667, 8, -65533, 4849667, 8, 3, 6684675, 9, -262134, 1572867, 7, 10, 6684675, 9, -327677, 4063235, 9, -327676, 4063235, 9, 4, 6684675, 9, -327675, 4063235, 9, 5, 6684675, 9, -327674, 4063235, 9, 6, 6684675, 9, -327673, 4063235, 9, 7, 6684675, 9, -327672, 4063235, 9, 8, 6684675, 9, -327671, 4063235, 9, 9, 6684675, 9, -327670, 4063235, 9, -262155, 6684675, 9, -262152, 6094851, 8, -196598, 5373955, 1342177289, -131062, 5373955, 1342177289, -65526, 5373955, 1342177289)
+[node name="NPC2_going_in_3" parent="." instance=ExtResource("14_q2mtx")]
+visible = false
+
+[node name="NPC2_going_in_4" parent="." instance=ExtResource("17_5ylq7")]
+visible = false
+
+[node name="NPC2_going_in_5" parent="." instance=ExtResource("19_xr1ht")]
+visible = false
+
+[node name="NPC2_going_in_6" parent="." instance=ExtResource("20_03a8q")]
+visible = false
+position = Vector2(-13, -3)
+
+[node name="NPC1_going_out_1" parent="." instance=ExtResource("21_bt0lr")]
+visible = false
+
+[node name="NPC1_going_out_2" parent="." instance=ExtResource("22_j8jt2")]
+visible = false
+
+[node name="NPC1_going_out_3" parent="." instance=ExtResource("23_8kb1v")]
+visible = false
+
+[node name="NPC1_going_out_4" parent="." instance=ExtResource("24_7w1sk")]
+visible = false
+
+[node name="NPC1_going_out_5" parent="." instance=ExtResource("25_yq2u1")]
+visible = false
+
+[node name="NPC1_going_out_6" parent="." instance=ExtResource("26_nanof")]
+visible = false
+
+[node name="NPC2_going_out_1" parent="." instance=ExtResource("27_nrxki")]
+visible = false
+
+[node name="NPC2_going_out_2" parent="." instance=ExtResource("28_ja7aq")]
+visible = false
+
+[node name="NPC2_going_out_3" parent="." instance=ExtResource("29_nu4hn")]
+visible = false
+
+[node name="NPC2_going_out_4" parent="." instance=ExtResource("30_22fa1")]
+visible = false
+
+[node name="NPC2_going_out_5" parent="." instance=ExtResource("31_mhtxp")]
+visible = false
+
+[node name="NPC2_going_out_6" parent="." instance=ExtResource("32_mjhxg")]
+visible = false

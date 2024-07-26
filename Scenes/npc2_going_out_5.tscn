@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://js0a8540f4h7"]
+
+[ext_resource type="Script" path="res://Scripts/npc2_going_in_path.gd" id="1_vcbd1"]
+[ext_resource type="Texture2D" uid="uid://bysp4fld4vllu" path="res://Icons/NPCs/NPC2Back2.png" id="2_ytqvj"]
+[ext_resource type="Texture2D" uid="uid://bkj5j1xtf36lp" path="res://Icons/NPCs/NPC2Back1.png" id="3_cm7tg"]
+[ext_resource type="Texture2D" uid="uid://b8d4puwpith0m" path="res://Icons/NPCs/NPC2Back3.png" id="4_attqp"]
+[ext_resource type="Texture2D" uid="uid://c3ni5e6ew2ekq" path="res://Icons/NPCs/NPC2Back.png" id="5_fpiry"]
+[ext_resource type="Texture2D" uid="uid://vhpah5fttha3" path="res://Icons/NPCs/NPC2Front3.png" id="6_q5dgy"]
+[ext_resource type="Texture2D" uid="uid://6lit5y6qusj8" path="res://Icons/NPCs/NPC2Front2.png" id="7_m7sm7"]
+[ext_resource type="Texture2D" uid="uid://dkkmn3o1n2r4b" path="res://Icons/NPCs/NPC2Front1.png" id="8_dbdu2"]
+[ext_resource type="Texture2D" uid="uid://ebwqvlwv4o04" path="res://Icons/NPCs/NPC2Front.png" id="9_ns3ym"]
+
+[sub_resource type="Curve2D" id="Curve2D_lkhpm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 567, 562, 0, 0, 0, 0, 569, 725, 0, 0, 0, 0, 569, 863, 0, 0, 0, 0, 581, 968, 0, 0, 0, 0, 608, 1017, 0, 0, 0, 0, 764, 1015, 0, 0, 0, 0, 944, 1025, 0, 0, 0, 0, 1109, 1080)
+}
+point_count = 8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs1m7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ytqvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cm7tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_attqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cm7tg")
+}],
+"loop": true,
+"name": &"NPC2Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fpiry")
+}],
+"loop": true,
+"name": &"NPC2BackStill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q5dgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m7sm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dbdu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m7sm7")
+}],
+"loop": true,
+"name": &"NPC2Front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ns3ym")
+}],
+"loop": true,
+"name": &"NPC2FrontStill",
+"speed": 5.0
+}]
+
+[node name="NPC2_going_out_1" type="Path2D"]
+curve = SubResource("Curve2D_lkhpm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(567, 562)
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_vcbd1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+z_index = 1
+scale = Vector2(0.095, 0.095)
+sprite_frames = SubResource("SpriteFrames_xs1m7")
+animation = &"NPC2Front"
+frame_progress = 0.499037
