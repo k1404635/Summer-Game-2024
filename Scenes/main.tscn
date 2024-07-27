@@ -58,6 +58,10 @@ func _process(delta):
 	
 	# handle creating and being able to get food items (look this up too)
 	
+	# Game over
+	if (Global.lives == 0):
+		get_tree().change_scene_to_file(\"res://Scenes/game_over_screen.tscn\")
+	
 	# Pausing
 	if Input.is_action_just_pressed(\"Pause\"): 
 		if $UILayer/PauseMenu.visible:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://rub2cbpyxjqa"]
+[gd_scene load_steps=4 format=3 uid="uid://rub2cbpyxjqa"]
 
 [ext_resource type="Script" path="res://Scripts/GUI.gd" id="1_aglft"]
 [ext_resource type="PackedScene" uid="uid://dfa3r1j15a55f" path="res://Scenes/pause_menu.tscn" id="1_ipydu"]
+[ext_resource type="Texture2D" uid="uid://cnca3dljv0cqr" path="res://Icons/heart.png" id="3_7bh2i"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 10
@@ -9,3 +10,18 @@ script = ExtResource("1_aglft")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_ipydu")]
 visible = false
+
+[node name="Life1" type="Sprite2D" parent="."]
+position = Vector2(30.9492, 1056)
+scale = Vector2(0.0974576, 0.0974576)
+texture = ExtResource("3_7bh2i")
+
+[node name="Life2" type="Sprite2D" parent="."]
+position = Vector2(87.9491, 1056)
+scale = Vector2(0.0974576, 0.0974576)
+texture = ExtResource("3_7bh2i")
+
+[node name="Life3" type="Sprite2D" parent="."]
+position = Vector2(143.949, 1056)
+scale = Vector2(0.0974576, 0.0974576)
+texture = ExtResource("3_7bh2i")

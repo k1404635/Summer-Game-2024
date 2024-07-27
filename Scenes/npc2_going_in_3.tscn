@@ -13,7 +13,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_4u8vl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 266, 1078, 0, 0, 0, 0, 302, 1021, 0, 0, 0, 0, 416, 1024, 0, 0, 0, 0, 515, 999, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 461, 651, 0, 0, 0, 0, 427, 572)
+"points": PackedVector2Array(0, 0, 0, 0, 282, 1082, 0, 0, 0, 0, 302, 1021, 0, 0, 0, 0, 416, 1024, 0, 0, 0, 0, 515, 999, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 461, 651, 0, 0, 0, 0, 427, 572)
 }
 point_count = 7
 
@@ -74,7 +74,7 @@ animations = [{
 curve = SubResource("Curve2D_4u8vl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(266, 1078)
+position = Vector2(282, 1082)
 rotates = false
 cubic_interp = false
 loop = false
