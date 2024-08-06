@@ -12,9 +12,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_b4jal"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 495, 1078, 0, 0, 0, 0, 542, 897, 0, 0, 0, 0, 769, 776, 0, 0, 0, 0, 954, 719, 0, 0, 0, 0, 1128, 678, 0, 0, 0, 0, 1264, 648, 0, 0, 0, 0, 1263, 557)
+"points": PackedVector2Array(0, 0, 0, 0, 495, 1078, 0, 0, 0, 0, 542, 897, 0, 0, 0, 0, 769, 776, 0, 0, 0, 0, 954, 719, 0, 0, 0, 0, 1128, 678, 0, 0, 0, 0, 1264, 648, 0, 0, 0, 0, 1265, 556, 0, 0, 0, 0, 1263, 648, 0, 0, 0, 0, 1127, 677, 0, 0, 0, 0, 954, 718, 0, 0, 0, 0, 769, 776, 0, 0, 0, 0, 542, 895, 0, 0, 0, 0, 494, 1077)
 }
-point_count = 7
+point_count = 13
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmyyt"]
 animations = [{
@@ -84,4 +84,3 @@ z_index = 2
 scale = Vector2(0.082, 0.082)
 sprite_frames = SubResource("SpriteFrames_rmyyt")
 animation = &"NPC1Back"
-frame_progress = 0.536807
