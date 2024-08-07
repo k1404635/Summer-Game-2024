@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyogrh2lw3l47"]
+[gd_scene load_steps=16 format=3 uid="uid://dyogrh2lw3l47"]
 
 [ext_resource type="Script" path="res://Scripts/npc2_going_in_path.gd" id="1_13eb3"]
 [ext_resource type="Texture2D" uid="uid://bysp4fld4vllu" path="res://Icons/NPCs/NPC2Back2.png" id="2_xy2d2"]
@@ -10,10 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dkkmn3o1n2r4b" path="res://Icons/NPCs/NPC2Front1.png" id="8_gawse"]
 [ext_resource type="Texture2D" uid="uid://ebwqvlwv4o04" path="res://Icons/NPCs/NPC2Front.png" id="9_ihyrf"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="10_i47hu"]
+[ext_resource type="Texture2D" uid="uid://3hy8fj5j64as" path="res://Icons/bar_bg.png" id="10_r2s7i"]
+[ext_resource type="Texture2D" uid="uid://bbythiwbvv0j7" path="res://Icons/bar_border.png" id="11_nlofh"]
+[ext_resource type="Texture2D" uid="uid://tin7h0i3cm32" path="res://Icons/Food/saladOrder.png" id="12_nt3yv"]
 
 [sub_resource type="Curve2D" id="Curve2D_4u8vl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 282, 1082, 0, 0, 0, 0, 302, 1021, 0, 0, 0, 0, 416, 1024, 0, 0, 0, 0, 515, 999, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 461, 651, 0, 0, 0, 0, 427, 572, 0, 0, 0, 0, 460, 652, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 513, 999, 0, 0, 0, 0, 415, 1022, 0, 0, 0, 0, 300, 1021, 0, 0, 0, 0, 280, 1080)
+"points": PackedVector2Array(0, 0, 0, 0, 282, 1082, 0, 0, 0, 0, 302, 1021, 0, 0, 0, 0, 416, 1024, 0, 0, 0, 0, 515, 999, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 461, 651, 0, 0, 0, 0, 429, 568, 0, 0, 0, 0, 460, 652, 0, 0, 0, 0, 560, 936, 0, 0, 0, 0, 513, 999, 0, 0, 0, 0, 415, 1022, 0, 0, 0, 0, 300, 1021, 0, 0, 0, 0, 280, 1080)
 }
 point_count = 13
 
@@ -86,6 +89,35 @@ scale = Vector2(0.095, 0.095)
 sprite_frames = SubResource("SpriteFrames_fqouh")
 animation = &"NPC2Front"
 
+[node name="order" type="Node2D" parent="PathFollow2D"]
+visible = false
+z_index = 20
+position = Vector2(-1260, -560)
+
+[node name="progress" type="TextureProgressBar" parent="PathFollow2D/order"]
+offset_left = 1287.0
+offset_top = 681.0
+offset_right = 1805.0
+offset_bottom = 836.0
+scale = Vector2(0.13, 0.05)
+value = 100.0
+texture_under = ExtResource("10_r2s7i")
+texture_over = ExtResource("11_nlofh")
+texture_progress = ExtResource("10_r2s7i")
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.187528, 0.906893, 0, 1)
+
+[node name="OrderBubble" type="TextureRect" parent="PathFollow2D/order"]
+offset_left = 592.0
+offset_top = 370.0
+offset_right = 1918.0
+offset_bottom = 1037.0
+texture = ExtResource("12_nt3yv")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="PathFollow2D/order"]
+autostart = true
+
 [node name="Background" type="TextureRect" parent="."]
 visible = false
 anchors_preset = 15
@@ -98,3 +130,5 @@ offset_bottom = 1082.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_i47hu")
+
+[connection signal="timeout" from="PathFollow2D/order/Timer" to="PathFollow2D" method="_on_timer_timeout"]

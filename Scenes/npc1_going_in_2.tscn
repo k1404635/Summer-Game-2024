@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxgthf3qsu8q3"]
+[gd_scene load_steps=15 format=3 uid="uid://bxgthf3qsu8q3"]
 
 [ext_resource type="Script" path="res://Scripts/npc1_going_in_path.gd" id="1_ulegu"]
 [ext_resource type="Texture2D" uid="uid://dc85n1nuwcn01" path="res://Icons/NPCs/NPC1Back1.png" id="2_18f43"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://moywxbapmstt" path="res://Icons/NPCs/NPC1Front2.png" id="7_ptx8f"]
 [ext_resource type="Texture2D" uid="uid://dssob0ic670fc" path="res://Icons/NPCs/NPC1Front1.png" id="8_jrowu"]
 [ext_resource type="Texture2D" uid="uid://5bfa2gdo7vx6" path="res://Icons/NPCs/NPC1Front.png" id="9_3iqmn"]
+[ext_resource type="Texture2D" uid="uid://3hy8fj5j64as" path="res://Icons/bar_bg.png" id="10_euqev"]
+[ext_resource type="Texture2D" uid="uid://bbythiwbvv0j7" path="res://Icons/bar_border.png" id="11_hk8uy"]
+[ext_resource type="Texture2D" uid="uid://c85lsgcjtv2iv" path="res://Icons/Food/meatOrder.png" id="12_7e4gr"]
 
 [sub_resource type="Curve2D" id="Curve2D_untxf"]
 _data = {
@@ -84,3 +87,34 @@ z_index = 2
 scale = Vector2(0.082, 0.082)
 sprite_frames = SubResource("SpriteFrames_624a0")
 animation = &"NPC1Back"
+
+[node name="order" type="Node2D" parent="PathFollow2D"]
+visible = false
+z_index = 20
+position = Vector2(-1260, -560)
+
+[node name="progress" type="TextureProgressBar" parent="PathFollow2D/order"]
+offset_left = 1290.0
+offset_top = 673.0
+offset_right = 1808.0
+offset_bottom = 828.0
+scale = Vector2(0.13, 0.05)
+value = 100.0
+texture_under = ExtResource("10_euqev")
+texture_over = ExtResource("11_hk8uy")
+texture_progress = ExtResource("10_euqev")
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.187528, 0.906893, 0, 1)
+
+[node name="OrderBubble" type="TextureRect" parent="PathFollow2D/order"]
+offset_left = 598.0
+offset_top = 337.0
+offset_right = 1924.0
+offset_bottom = 1004.0
+texture = ExtResource("12_7e4gr")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="PathFollow2D/order"]
+autostart = true
+
+[connection signal="timeout" from="PathFollow2D/order/Timer" to="PathFollow2D" method="_on_timer_timeout"]
