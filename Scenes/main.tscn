@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=23 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
 [ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://Scenes/veg_player.tscn" id="2_efkfk"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
+[ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/test_item.tscn" id="9_b36xc"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
@@ -229,6 +230,7 @@ tile_size = Vector2i(70, 70)
 sources/3 = SubResource("TileSetAtlasSource_x6bp4")
 
 [node name="World" type="Node2D"]
+position = Vector2(0, -14)
 script = SubResource("GDScript_s5cgh")
 
 [node name="MeatPlayer" parent="." instance=ExtResource("1_m5qir")]
@@ -513,6 +515,9 @@ wait_time = 5.0
 [node name="NPC initial spawn timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="test item" parent="." instance=ExtResource("9_b36xc")]
+position = Vector2(1191, 369)
 
 [connection signal="timeout" from="NPC respawn timer" to="." method="_on_npc_respawn_timer_timeout"]
 [connection signal="timeout" from="NPC initial spawn timer" to="." method="_on_npc_initial_spawn_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b80oxjmy8lgn6"]
+[gd_scene load_steps=19 format=3 uid="uid://b80oxjmy8lgn6"]
 
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="1_0sif0"]
 [ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="2_w5tas"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://beglhcuidkhhu" path="res://Icons/Players/MeatLeft1.png" id="9_yc1w7"]
 [ext_resource type="Texture2D" uid="uid://durx62ccne15" path="res://Icons/Players/MeatRightStill.png" id="10_md2lk"]
 [ext_resource type="Texture2D" uid="uid://dj5vpa4tnjys4" path="res://Icons/Players/MeatRight1.png" id="11_5gyvu"]
+[ext_resource type="Script" path="res://Scripts/PlayerInteractionHandler.gd" id="12_w2017"]
+[ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/test_item.tscn" id="13_ej12o"]
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="13_h0fiq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
 animations = [{
@@ -91,11 +94,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uve6"]
-radius = 16.0
-height = 64.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4ksm"]
+size = Vector2(42, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k46nq"]
+[sub_resource type="Resource" id="Resource_qxwfc"]
+script = ExtResource("13_h0fiq")
+ItemName = "Test Item"
+ItemModelPrefab = ExtResource("13_ej12o")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5tsk"]
+radius = 19.0
+height = 62.0
 
 [node name="MeatPlayer" type="CharacterBody2D"]
 z_index = 10
@@ -108,17 +117,24 @@ sprite_frames = SubResource("SpriteFrames_xxkhc")
 animation = &"MeatRight"
 frame_progress = 0.449803
 
-[node name="Useless" type="CollisionShape2D" parent="."]
+[node name="useless" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(8, 27)
-shape = SubResource("CapsuleShape2D_6uve6")
+position = Vector2(6, 36)
+shape = SubResource("RectangleShape2D_m4ksm")
 
 [node name="MeatCurrentInteraction" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="MeatInteraction" type="Area2D" parent="."]
-visible = false
+[node name="InteractionArea" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 0
+script = ExtResource("12_w2017")
+ItemTypes = Array[ExtResource("13_h0fiq")]([SubResource("Resource_qxwfc")])
 
-[node name="Collision" type="CollisionShape2D" parent="MeatInteraction"]
-shape = SubResource("RectangleShape2D_k46nq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(7, 28)
+shape = SubResource("CapsuleShape2D_v5tsk")
+
+[connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="OnBodyEnteredArea"]
+[connection signal="area_exited" from="InteractionArea" to="InteractionArea" method="OnBodyExitedArea"]
