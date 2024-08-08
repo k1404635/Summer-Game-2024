@@ -13,3 +13,8 @@ func FillSlot(data : ItemData):
 	SlotData = data
 	SlotFilled = true
 	IconSlot.texture = data.Icon
+	
+func ClearSlot(data : ItemData):
+	SlotData = null
+	SlotFilled = false
+	IconSlot.texture = null

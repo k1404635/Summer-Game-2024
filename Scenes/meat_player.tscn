@@ -169,6 +169,7 @@ theme_override_constants/margin_bottom = 5
 [node name="GridContainer" type="GridContainer" parent="InventoryUI/Panel/MarginContainer"]
 layout_mode = 2
 
+[connection signal="OnItemDropped" from="InteractionArea" to="InventoryUI" method="DropItem"]
 [connection signal="OnItemPickedUp" from="InteractionArea" to="InventoryUI" method="PickupItem"]
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="OnBodyEnteredArea"]
 [connection signal="area_exited" from="InteractionArea" to="InteractionArea" method="OnBodyExitedArea"]

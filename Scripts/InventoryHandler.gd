@@ -19,3 +19,8 @@ func PickupItem(item : ItemData):
 		if(!slot.SlotFilled):
 			slot.FillSlot(item)
 			break
+
+func DropItem(item : ItemData):
+	for slot in InventorySlots:
+		if(slot.SlotFilled):
+			slot.ClearSlot(item)
