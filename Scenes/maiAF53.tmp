@@ -16,7 +16,6 @@ script/source = "extends Node2D
 
 @onready var score_label: Label = $Score
 @onready var currentNPCs : Array[String]
-@onready var initialNPCs: Array[String]
 
 var Score = 0
 var highscore = 0 # setting highscore to 0 here is a bad idea (have to look up how to keep track of it - maybe use global??)
@@ -53,7 +52,7 @@ func _process(delta):
 			$NPCs.remove_child(n)
 			n.queue_free()
 			currentNPCs.remove_at(currentNPCs.find(n.get_name()))
-			$\"NPC respawn timer\".start()
+			$\"NPC respawn timer\".autostart()
 
 func _input(event):
 	if Input.is_action_pressed(\"Switch Characters\"):
@@ -75,96 +74,108 @@ func unfreeze():
 
 # spawn more npcs if that npc doesn't exist atm
 func _on_npc_respawn_timer_timeout():
-	if initialNPCs.size() == 12:
-		if (!currentNPCs.has(\"NPC1_1\")):
-			currentNPCs.append(\"NPC1_1\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_2\")):
-			currentNPCs.append(\"NPC1_2\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_3\")):
-			currentNPCs.append(\"NPC1_3\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_4\")):
-			currentNPCs.append(\"NPC1_4\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_5\")):
-			currentNPCs.append(\"NPC1_5\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_6\")):
-			currentNPCs.append(\"NPC1_6\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
-			
-		if (!currentNPCs.has(\"NPC2_1\")):
-			currentNPCs.append(\"NPC2_1\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_2\")):
-			currentNPCs.append(\"NPC2_2\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_3\")):
-			currentNPCs.append(\"NPC2_3\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_4\")):
-			currentNPCs.append(\"NPC2_4\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_5\")):
-			currentNPCs.append(\"NPC2_5\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_6\")):
-			currentNPCs.append(\"NPC2_6\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_1\")):
+		currentNPCs.append(\"NPC1_1\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_2\")):
+		currentNPCs.append(\"NPC1_2\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_3\")):
+		currentNPCs.append(\"NPC1_3\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_4\")):
+		currentNPCs.append(\"NPC1_4\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_5\")):
+		currentNPCs.append(\"NPC1_5\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_6\")):
+		currentNPCs.append(\"NPC1_6\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
+		
+	if (!currentNPCs.has(\"NPC2_1\")):
+		currentNPCs.append(\"NPC2_1\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_2\")):
+		currentNPCs.append(\"NPC2_2\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_3\")):
+		currentNPCs.append(\"NPC2_3\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_4\")):
+		currentNPCs.append(\"NPC2_4\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_5\")):
+		currentNPCs.append(\"NPC2_5\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_6\")):
+		currentNPCs.append(\"NPC2_6\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
 
 
 func _on_npc_initial_spawn_timer_timeout():
-	if (initialNPCs.has(\"NPC1_3\")):
-		initialNPCs.append(\"NPC2_5\")
-		currentNPCs.append(\"NPC2_5\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
-		$\"NPC initial spawn timer\".stop()
-	elif (initialNPCs.has(\"NPC1_5\")):
-		initialNPCs.append(\"NPC1_3\")
-		currentNPCs.append(\"NPC1_3\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_2\")):
-		initialNPCs.append(\"NPC1_5\")
-		currentNPCs.append(\"NPC1_5\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_6\")):
-		initialNPCs.append(\"NPC2_2\")
-		currentNPCs.append(\"NPC2_2\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_2\")):
-		initialNPCs.append(\"NPC2_6\")
-		currentNPCs.append(\"NPC2_6\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_6\")):
-		initialNPCs.append(\"NPC1_2\")
-		currentNPCs.append(\"NPC1_2\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())	
-	elif (initialNPCs.has(\"NPC2_4\")):
-		initialNPCs.append(\"NPC1_6\")
-		currentNPCs.append(\"NPC1_6\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_1\")):
-		initialNPCs.append(\"NPC2_4\")
-		currentNPCs.append(\"NPC2_4\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_4\")):
-		initialNPCs.append(\"NPC2_1\")
-		currentNPCs.append(\"NPC2_1\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_3\")):
-		initialNPCs.append(\"NPC1_4\")
-		currentNPCs.append(\"NPC1_4\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_1\")):
-		initialNPCs.append(\"NPC2_3\")
-		currentNPCs.append(\"NPC2_3\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
-	elif (initialNPCs.is_empty()):
-		initialNPCs.append(\"NPC1_1\")
+	var added = false
+	
+	if (currentNPCs.is_empty() and !added):
 		currentNPCs.append(\"NPC1_1\")
 		$NPCs.add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_1\") and !added):
+		currentNPCs.append(\"NPC2_3\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
+		added = true
+	
+	print(currentNPCs.has(\"NPC2_3\") and !added)
+	if (currentNPCs.has(\"NPC2_3\") and !added):
+		currentNPCs.append(\"NPC1_4\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_4\") and !added):
+		currentNPCs.append(\"NPC2_1\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC2_1\") and !added):
+		currentNPCs.append(\"NPC2_4\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC2_4\") and !added):
+		currentNPCs.append(\"NPC1_6\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_6\") and !added):
+		currentNPCs.append(\"NPC1_2\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_2\") and !added):
+		currentNPCs.append(\"NPC2_6\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC2_6\") and !added):
+		currentNPCs.append(\"NPC2_2\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC2_2\") and !added):
+		currentNPCs.append(\"NPC1_5\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_5\") and !added):
+		currentNPCs.append(\"NPC1_3\")
+		$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
+		added = true
+		
+	if (currentNPCs.has(\"NPC1_3\") and !added):
+		currentNPCs.append(\"NPC2_5\")
+		$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
+		added = true
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dai"]

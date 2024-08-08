@@ -72,7 +72,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="NPC1_going_in_2" type="Path2D"]
+[node name="NPC1_2" type="Path2D"]
 curve = SubResource("Curve2D_untxf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

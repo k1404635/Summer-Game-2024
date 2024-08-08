@@ -72,7 +72,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="NPC2_going_in_1" type="Path2D"]
+[node name="NPC2_1" type="Path2D"]
 curve = SubResource("Curve2D_lkhpm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -100,7 +100,7 @@ offset_top = 681.0
 offset_right = 1805.0
 offset_bottom = 836.0
 scale = Vector2(0.13, 0.05)
-value = 100.0
+value = 10.0
 texture_under = ExtResource("10_50wgb")
 texture_over = ExtResource("11_g10yg")
 texture_progress = ExtResource("10_50wgb")

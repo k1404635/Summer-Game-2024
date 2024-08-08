@@ -1,11 +1,23 @@
-[gd_scene load_steps=22 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=34 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
 [ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://Scenes/veg_player.tscn" id="2_efkfk"]
 [ext_resource type="Script" path="res://Scripts/PowerUpTimer.gd" id="4_a5wk3"]
 [ext_resource type="Script" path="res://Scripts/PowerUpMenu.gd" id="6_664k3"]
+[ext_resource type="PackedScene" uid="uid://cjum8kqqtym2i" path="res://Scenes/npc1_1.tscn" id="9_j8dnx"]
+[ext_resource type="PackedScene" uid="uid://bw6fbqchaioo4" path="res://Scenes/npc2_1.tscn" id="10_yrnxi"]
+[ext_resource type="PackedScene" uid="uid://dxgt275bl3byk" path="res://Scenes/npc2_2.tscn" id="11_m2c7k"]
+[ext_resource type="PackedScene" uid="uid://bxgthf3qsu8q3" path="res://Scenes/npc1_2.tscn" id="12_ms5wp"]
+[ext_resource type="PackedScene" uid="uid://cfuandmcgxlbe" path="res://Scenes/npc1_5.tscn" id="12_ndlqu"]
+[ext_resource type="PackedScene" uid="uid://m8upxk88fd50" path="res://Scenes/npc1_4.tscn" id="13_3vfxv"]
+[ext_resource type="PackedScene" uid="uid://cvsifulpcn85c" path="res://Scenes/npc1_3.tscn" id="13_6yxff"]
+[ext_resource type="PackedScene" uid="uid://dc0oq4xujixja" path="res://Scenes/npc1_6.tscn" id="13_jj4ck"]
+[ext_resource type="PackedScene" uid="uid://dyogrh2lw3l47" path="res://Scenes/npc2_3.tscn" id="14_q2mtx"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
+[ext_resource type="PackedScene" uid="uid://ci7xdpkrgatxo" path="res://Scenes/npc2_4.tscn" id="17_5ylq7"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
+[ext_resource type="PackedScene" uid="uid://tqsfydd0jsaa" path="res://Scenes/npc2_5.tscn" id="19_xr1ht"]
+[ext_resource type="PackedScene" uid="uid://chm3v43yxytfa" path="res://Scenes/npc2_6.tscn" id="20_03a8q"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://Icons/tilemap.png" id="29_1htrv"]
 
@@ -16,7 +28,6 @@ script/source = "extends Node2D
 
 @onready var score_label: Label = $Score
 @onready var currentNPCs : Array[String]
-@onready var initialNPCs: Array[String]
 
 var Score = 0
 var highscore = 0 # setting highscore to 0 here is a bad idea (have to look up how to keep track of it - maybe use global??)
@@ -28,6 +39,7 @@ func _ready():
 	$VegPlayer.position = Vector2(510, 350)
 	# might be nice to put a freeze here and then say the instructions before starting (add this last since we might not have enough time)
 	# add_player_interactives()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,12 +60,49 @@ func _process(delta):
 			$UILayer/PauseMenu.pause()
 			$UILayer/PauseMenu.visible = true
 	
+	# spawn more npcs if that npc doesn't exist atm
+	if (!currentNPCs.has(\"NPC1_1\")):
+		currentNPCs.append(\"NPC1_1\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_2\")):
+		currentNPCs.append(\"NPC1_2\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_3\")):
+		currentNPCs.append(\"NPC1_3\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_4\")):
+		currentNPCs.append(\"NPC1_4\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_5\")):
+		currentNPCs.append(\"NPC1_5\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC1_6\")):
+		currentNPCs.append(\"NPC1_6\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
+		
+	if (!currentNPCs.has(\"NPC2_1\")):
+		currentNPCs.append(\"NPC2_1\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_2\")):
+		currentNPCs.append(\"NPC2_2\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_3\")):
+		currentNPCs.append(\"NPC2_3\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_4\")):
+		currentNPCs.append(\"NPC2_4\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_5\")):
+		currentNPCs.append(\"NPC2_5\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
+	if (!currentNPCs.has(\"NPC2_6\")):
+		currentNPCs.append(\"NPC2_6\")
+		get_tree().get_root().add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
+	
 	for n in $NPCs.get_children():
-		if(n.get_child(0).get_progress_ratio() == 1):
-			$NPCs.remove_child(n)
+		if(n.get_progress_ratio() == 1):
 			n.queue_free()
-			currentNPCs.remove_at(currentNPCs.find(n.get_name()))
-			$\"NPC respawn timer\".start()
+			currentNPCs.remove_at(currentNPCs.find(n))
 
 func _input(event):
 	if Input.is_action_pressed(\"Switch Characters\"):
@@ -72,99 +121,6 @@ func freeze():
 func unfreeze():
 	# unfreeze for the same as above
 	pass
-
-# spawn more npcs if that npc doesn't exist atm
-func _on_npc_respawn_timer_timeout():
-	if initialNPCs.size() == 12:
-		if (!currentNPCs.has(\"NPC1_1\")):
-			currentNPCs.append(\"NPC1_1\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_2\")):
-			currentNPCs.append(\"NPC1_2\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_3\")):
-			currentNPCs.append(\"NPC1_3\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_4\")):
-			currentNPCs.append(\"NPC1_4\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_5\")):
-			currentNPCs.append(\"NPC1_5\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC1_6\")):
-			currentNPCs.append(\"NPC1_6\")
-			$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
-			
-		if (!currentNPCs.has(\"NPC2_1\")):
-			currentNPCs.append(\"NPC2_1\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_2\")):
-			currentNPCs.append(\"NPC2_2\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_3\")):
-			currentNPCs.append(\"NPC2_3\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_4\")):
-			currentNPCs.append(\"NPC2_4\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_5\")):
-			currentNPCs.append(\"NPC2_5\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
-		if (!currentNPCs.has(\"NPC2_6\")):
-			currentNPCs.append(\"NPC2_6\")
-			$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
-
-
-func _on_npc_initial_spawn_timer_timeout():
-	if (initialNPCs.has(\"NPC1_3\")):
-		initialNPCs.append(\"NPC2_5\")
-		currentNPCs.append(\"NPC2_5\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_5.tscn\").instantiate())
-		$\"NPC initial spawn timer\".stop()
-	elif (initialNPCs.has(\"NPC1_5\")):
-		initialNPCs.append(\"NPC1_3\")
-		currentNPCs.append(\"NPC1_3\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_3.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_2\")):
-		initialNPCs.append(\"NPC1_5\")
-		currentNPCs.append(\"NPC1_5\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_5.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_6\")):
-		initialNPCs.append(\"NPC2_2\")
-		currentNPCs.append(\"NPC2_2\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_2.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_2\")):
-		initialNPCs.append(\"NPC2_6\")
-		currentNPCs.append(\"NPC2_6\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_6.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_6\")):
-		initialNPCs.append(\"NPC1_2\")
-		currentNPCs.append(\"NPC1_2\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_2.tscn\").instantiate())	
-	elif (initialNPCs.has(\"NPC2_4\")):
-		initialNPCs.append(\"NPC1_6\")
-		currentNPCs.append(\"NPC1_6\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_6.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_1\")):
-		initialNPCs.append(\"NPC2_4\")
-		currentNPCs.append(\"NPC2_4\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_4.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_4\")):
-		initialNPCs.append(\"NPC2_1\")
-		currentNPCs.append(\"NPC2_1\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_1.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC2_3\")):
-		initialNPCs.append(\"NPC1_4\")
-		currentNPCs.append(\"NPC1_4\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_4.tscn\").instantiate())
-	elif (initialNPCs.has(\"NPC1_1\")):
-		initialNPCs.append(\"NPC2_3\")
-		currentNPCs.append(\"NPC2_3\")
-		$NPCs.add_child(preload(\"res://Scenes/npc2_3.tscn\").instantiate())
-	elif (initialNPCs.is_empty()):
-		initialNPCs.append(\"NPC1_1\")
-		currentNPCs.append(\"NPC1_1\")
-		$NPCs.add_child(preload(\"res://Scenes/npc1_1.tscn\").instantiate())
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dai"]
@@ -507,12 +463,40 @@ layer_0/tile_data = PackedInt32Array(-262154, 6094851, 8, -262153, 6094851, 8, -
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="NPC respawn timer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="NPC1_1" parent="NPCs" instance=ExtResource("9_j8dnx")]
+visible = false
 
-[node name="NPC initial spawn timer" type="Timer" parent="."]
-wait_time = 4.0
-autostart = true
+[node name="NPC1_2" parent="NPCs" instance=ExtResource("12_ms5wp")]
+visible = false
 
-[connection signal="timeout" from="NPC respawn timer" to="." method="_on_npc_respawn_timer_timeout"]
-[connection signal="timeout" from="NPC initial spawn timer" to="." method="_on_npc_initial_spawn_timer_timeout"]
+[node name="NPC1_3" parent="NPCs" instance=ExtResource("13_6yxff")]
+visible = false
+
+[node name="NPC1_4" parent="NPCs" instance=ExtResource("13_3vfxv")]
+visible = false
+
+[node name="NPC1_5" parent="NPCs" instance=ExtResource("12_ndlqu")]
+visible = false
+
+[node name="NPC1_6" parent="NPCs" instance=ExtResource("13_jj4ck")]
+visible = false
+
+[node name="NPC2_1" parent="NPCs" instance=ExtResource("10_yrnxi")]
+visible = false
+
+[node name="NPC2_2" parent="NPCs" instance=ExtResource("11_m2c7k")]
+visible = false
+position = Vector2(0, 5)
+
+[node name="NPC2_3" parent="NPCs" instance=ExtResource("14_q2mtx")]
+visible = false
+
+[node name="NPC2_4" parent="NPCs" instance=ExtResource("17_5ylq7")]
+visible = false
+
+[node name="NPC2_5" parent="NPCs" instance=ExtResource("19_xr1ht")]
+visible = false
+
+[node name="NPC2_6" parent="NPCs" instance=ExtResource("20_03a8q")]
+visible = false
+position = Vector2(1, 0)
