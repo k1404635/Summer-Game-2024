@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duq70a0h3k6jg"]
+[gd_scene load_steps=20 format=3 uid="uid://duq70a0h3k6jg"]
 
 [ext_resource type="Script" path="res://Scripts/VegPlayer.gd" id="1_eq0su"]
 [ext_resource type="Texture2D" uid="uid://c6xqm6n8ipxt3" path="res://Icons/Players/VegBack1.png" id="2_3ern2"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://busdef8ebxn7o" path="res://Icons/Players/VegLeft1.png" id="9_36hms"]
 [ext_resource type="Texture2D" uid="uid://bruxh5kpv6ill" path="res://Icons/Players/VegRightStill.png" id="10_0t5mp"]
 [ext_resource type="Texture2D" uid="uid://b7iy0hicl10oo" path="res://Icons/Players/VegRight1.png" id="11_rqvik"]
+[ext_resource type="Script" path="res://Scripts/PlayerInteractionHandler.gd" id="12_303jh"]
+[ext_resource type="Texture2D" uid="uid://cc31v2g4q1rwn" path="res://Icons/Food/RawMeat.png" id="13_3c7lw"]
+[ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/test_item.tscn" id="13_b04na"]
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="14_ypetc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwmtd"]
 animations = [{
@@ -95,9 +99,15 @@ animations = [{
 radius = 15.5
 height = 68.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjudb"]
-radius = 21.0
-height = 70.0
+[sub_resource type="Resource" id="Resource_qxwfc"]
+script = ExtResource("14_ypetc")
+ItemName = "Test Item"
+Icon = ExtResource("13_3c7lw")
+ItemModelPrefab = ExtResource("13_b04na")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uoyrk"]
+radius = 23.0
+height = 62.0
 
 [node name="VegPlayer" type="CharacterBody2D"]
 z_index = 10
@@ -118,9 +128,15 @@ shape = SubResource("CapsuleShape2D_8u3ft")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="VegInteraction" type="Area2D" parent="."]
-visible = false
+[node name="InteractionArea" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 0
+script = ExtResource("12_303jh")
+ItemTypes = Array[ExtResource("14_ypetc")]([SubResource("Resource_qxwfc")])
 
-[node name="Collision" type="CollisionShape2D" parent="VegInteraction"]
-position = Vector2(-2, 26)
-shape = SubResource("CapsuleShape2D_mjudb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-3, 26)
+shape = SubResource("CapsuleShape2D_uoyrk")
+
+[connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="OnBodyEnteredArea"]
+[connection signal="area_exited" from="InteractionArea" to="InteractionArea" method="OnBodyExitedArea"]

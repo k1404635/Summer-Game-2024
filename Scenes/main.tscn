@@ -517,7 +517,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="test item" parent="." instance=ExtResource("9_b36xc")]
-position = Vector2(1191, 369)
+position = Vector2(1193, 372)
 
 [connection signal="timeout" from="NPC respawn timer" to="." method="_on_npc_respawn_timer_timeout"]
 [connection signal="timeout" from="NPC initial spawn timer" to="." method="_on_npc_initial_spawn_timer_timeout"]

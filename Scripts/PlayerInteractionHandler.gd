@@ -1,5 +1,7 @@
 extends Area2D
 
+signal OnItemPickedUp(item)
+
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
@@ -23,6 +25,7 @@ func Pickup():
 			for i in ItemTypes.size():
 				if(ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 					print("Item id:" + str(i) + " Item Name: " + ItemTypes[i].ItemName)
+					OnItemPickedUp.emit(ItemTypes[i])
 					return
 				
 				printerr("Item not found") 

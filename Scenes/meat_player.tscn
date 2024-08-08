@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b80oxjmy8lgn6"]
+[gd_scene load_steps=21 format=3 uid="uid://b80oxjmy8lgn6"]
 
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="1_0sif0"]
 [ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="2_w5tas"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerInteractionHandler.gd" id="12_w2017"]
 [ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/test_item.tscn" id="13_ej12o"]
 [ext_resource type="Script" path="res://Scripts/ItemData.gd" id="13_h0fiq"]
+[ext_resource type="Texture2D" uid="uid://cc31v2g4q1rwn" path="res://Icons/Food/RawMeat.png" id="13_thfru"]
+[ext_resource type="Script" path="res://Scripts/InventoryHandler.gd" id="16_ojmo7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
 animations = [{
@@ -100,6 +102,7 @@ size = Vector2(42, 40)
 [sub_resource type="Resource" id="Resource_qxwfc"]
 script = ExtResource("13_h0fiq")
 ItemName = "Test Item"
+Icon = ExtResource("13_thfru")
 ItemModelPrefab = ExtResource("13_ej12o")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5tsk"]
@@ -136,5 +139,36 @@ ItemTypes = Array[ExtResource("13_h0fiq")]([SubResource("Resource_qxwfc")])
 position = Vector2(7, 28)
 shape = SubResource("CapsuleShape2D_v5tsk")
 
+[node name="InventoryUI" type="Control" parent="." node_paths=PackedStringArray("InventoryGrid")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = -240.0
+offset_bottom = -90.0
+script = ExtResource("16_ojmo7")
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="InventoryUI"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="InventoryUI/Panel/MarginContainer"]
+layout_mode = 2
+
+[connection signal="OnItemPickedUp" from="InteractionArea" to="InventoryUI" method="PickupItem"]
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="OnBodyEnteredArea"]
 [connection signal="area_exited" from="InteractionArea" to="InteractionArea" method="OnBodyExitedArea"]

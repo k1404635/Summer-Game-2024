@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://duwi286gt0yd8"]
+
+[ext_resource type="Script" path="res://Scripts/InventorySlot.gd" id="1_f4mm7"]
+
+[node name="InventorySlot" type="Control" node_paths=PackedStringArray("IconSlot")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 60.0
+offset_bottom = 60.0
+script = ExtResource("1_f4mm7")
+IconSlot = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+expand_mode = 1
