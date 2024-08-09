@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://big526h2iki81"]
+[gd_scene load_steps=25 format=3 uid="uid://big526h2iki81"]
 
 [ext_resource type="PackedScene" uid="uid://b80oxjmy8lgn6" path="res://Scenes/meat_player.tscn" id="1_m5qir"]
 [ext_resource type="PackedScene" uid="uid://duq70a0h3k6jg" path="res://Scenes/veg_player.tscn" id="2_efkfk"]
@@ -7,13 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/EggplantSack.tscn" id="9_b36xc"]
 [ext_resource type="PackedScene" uid="uid://jp7vscykxavm" path="res://Scenes/CabbageSack.tscn" id="10_5q2ub"]
 [ext_resource type="PackedScene" uid="uid://c333y4c5mj5a7" path="res://Scenes/TomatoSack.tscn" id="11_vi4xh"]
-[ext_resource type="PackedScene" uid="uid://cknkwm6gh3uwj" path="res://Scenes/Stove.tscn" id="12_yw33o"]
-[ext_resource type="PackedScene" uid="uid://doy5y2jaqy7lx" path="res://Scenes/ChoppingBoard.tscn" id="13_rysrl"]
-[ext_resource type="PackedScene" uid="uid://co1unga67midx" path="res://Scenes/CounterLeft.tscn" id="14_j5jmg"]
-[ext_resource type="PackedScene" uid="uid://boym03rgpbx1e" path="res://Scenes/CounterRight.tscn" id="15_r03ui"]
-[ext_resource type="PackedScene" uid="uid://cbh7nfwydkv5v" path="res://Scenes/CounterTop.tscn" id="16_014af"]
 [ext_resource type="AudioStream" uid="uid://5jtbe4ww7vdf" path="res://Audio/Gameplay Track.mp3" id="17_2cbpq"]
-[ext_resource type="PackedScene" uid="uid://s7k3bscbj4ba" path="res://Scenes/Table.tscn" id="17_v1l5r"]
 [ext_resource type="PackedScene" uid="uid://rub2cbpyxjqa" path="res://Scenes/GUI.tscn" id="18_46r3v"]
 [ext_resource type="Texture2D" uid="uid://d4m5625jiuboh" path="res://background.png" id="28_5i8s2"]
 [ext_resource type="Texture2D" uid="uid://ct81olosn8uxx" path="res://Icons/tilemap.png" id="29_1htrv"]
@@ -533,117 +527,6 @@ position = Vector2(221, 304)
 
 [node name="TomatoSack" parent="." instance=ExtResource("11_vi4xh")]
 position = Vector2(221, 236)
-
-[node name="Stoves" type="Node2D" parent="."]
-
-[node name="Stove" parent="Stoves" instance=ExtResource("12_yw33o")]
-
-[node name="Stove2" parent="Stoves" instance=ExtResource("12_yw33o")]
-position = Vector2(1688, 366)
-
-[node name="Stove3" parent="Stoves" instance=ExtResource("12_yw33o")]
-position = Vector2(1688, 436)
-
-[node name="Chopping Boards" type="Node2D" parent="."]
-
-[node name="Chopping Board" parent="Chopping Boards" instance=ExtResource("13_rysrl")]
-
-[node name="Chopping Board2" parent="Chopping Boards" instance=ExtResource("13_rysrl")]
-position = Vector2(353, 153)
-
-[node name="Chopping Board3" parent="Chopping Boards" instance=ExtResource("13_rysrl")]
-position = Vector2(424, 153)
-
-[node name="Counters" type="Node2D" parent="."]
-
-[node name="VegCounterLeft" parent="Counters" instance=ExtResource("14_j5jmg")]
-
-[node name="MeatCounterLeft" parent="Counters" instance=ExtResource("14_j5jmg")]
-position = Vector2(1193, 435)
-
-[node name="MeatCounterLeft2" parent="Counters" instance=ExtResource("14_j5jmg")]
-position = Vector2(1193, 366)
-
-[node name="MeatCounterLeft3" parent="Counters" instance=ExtResource("14_j5jmg")]
-position = Vector2(1193, 296)
-
-[node name="MeatCounterLeft4" parent="Counters" instance=ExtResource("14_j5jmg")]
-position = Vector2(1193, 226)
-
-[node name="VegCounterRight" parent="Counters" instance=ExtResource("15_r03ui")]
-
-[node name="VegCounterRight2" parent="Counters" instance=ExtResource("15_r03ui")]
-position = Vector2(701, 294)
-
-[node name="VegCounterRight3" parent="Counters" instance=ExtResource("15_r03ui")]
-position = Vector2(701, 365)
-
-[node name="VegCounterRight4" parent="Counters" instance=ExtResource("15_r03ui")]
-position = Vector2(701, 434)
-
-[node name="VegCounterTop" parent="Counters" instance=ExtResource("16_014af")]
-
-[node name="VegCounterTop2" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(562, 157)
-
-[node name="VegCounterTop3" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(631, 157)
-
-[node name="MeatCounterTop" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1262, 161)
-
-[node name="MeatCounterTop2" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1332, 161)
-
-[node name="MeatCounterTop3" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1402, 161)
-
-[node name="MeatCounterTop4" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1473, 161)
-
-[node name="MeatCounterTop5" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1543, 161)
-
-[node name="MeatCounterTop6" parent="Counters" instance=ExtResource("16_014af")]
-position = Vector2(1613, 161)
-
-[node name="Tables" type="Node2D" parent="."]
-
-[node name="VegTable" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(286, 495)
-
-[node name="VegTable2" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(356, 495)
-
-[node name="VegTable3" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(426, 495)
-
-[node name="VegTable4" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(496, 495)
-
-[node name="VegTable5" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(566, 495)
-
-[node name="VegTable6" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(636, 495)
-
-[node name="MeatTable" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1266, 493)
-
-[node name="MeatTable2" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1336, 493)
-
-[node name="MeatTable3" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1406, 493)
-
-[node name="MeatTable4" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1476, 493)
-
-[node name="MeatTable5" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1546, 493)
-
-[node name="MeatTable6" parent="Tables" instance=ExtResource("17_v1l5r")]
-position = Vector2(1616, 493)
 
 [connection signal="timeout" from="NPC respawn timer" to="." method="_on_npc_respawn_timer_timeout"]
 [connection signal="timeout" from="NPC initial spawn timer" to="." method="_on_npc_initial_spawn_timer_timeout"]

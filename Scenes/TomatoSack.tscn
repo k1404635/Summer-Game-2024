@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c333y4c5mj5a7"]
+
+[ext_resource type="Script" path="res://Scripts/InteractableItem.gd" id="1_xhdnj"]
+[ext_resource type="Texture2D" uid="uid://1urd1b6uq5jg" path="res://Icons/Food/Tomato.png" id="2_36kyl"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_6lecd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvwyt"]
+size = Vector2(70, 62)
+
+[node name="TomatoSack" type="Area2D"]
+script = ExtResource("1_xhdnj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.0352383, 0.0352383)
+texture = ExtResource("2_36kyl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Sprite2D"]
+scale = Vector2(932.549, 932.549)
+mesh = SubResource("PlaceholderMesh_6lecd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_jvwyt")

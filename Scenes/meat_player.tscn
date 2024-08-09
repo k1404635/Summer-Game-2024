@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b80oxjmy8lgn6"]
+[gd_scene load_steps=33 format=3 uid="uid://b80oxjmy8lgn6"]
 
 [ext_resource type="Script" path="res://Scripts/MeatPlayer.gd" id="1_0sif0"]
 [ext_resource type="Texture2D" uid="uid://bpv21lh51gm0m" path="res://Icons/Players/MeatBack1.png" id="2_w5tas"]
@@ -12,10 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://durx62ccne15" path="res://Icons/Players/MeatRightStill.png" id="10_md2lk"]
 [ext_resource type="Texture2D" uid="uid://dj5vpa4tnjys4" path="res://Icons/Players/MeatRight1.png" id="11_5gyvu"]
 [ext_resource type="Script" path="res://Scripts/PlayerInteractionHandler.gd" id="12_w2017"]
-[ext_resource type="PackedScene" uid="uid://cf1of34b7tbti" path="res://Scenes/test_item.tscn" id="13_ej12o"]
 [ext_resource type="Script" path="res://Scripts/ItemData.gd" id="13_h0fiq"]
 [ext_resource type="Texture2D" uid="uid://cc31v2g4q1rwn" path="res://Icons/Food/RawMeat.png" id="13_thfru"]
+[ext_resource type="PackedScene" uid="uid://cknkwm6gh3uwj" path="res://Scenes/Stove.tscn" id="15_lrkew"]
+[ext_resource type="Texture2D" uid="uid://b1steuptjgw87" path="res://Icons/Food/CookedMeat.png" id="15_pmuq5"]
+[ext_resource type="Script" path="res://Scripts/CounterData.gd" id="15_r5w87"]
 [ext_resource type="Script" path="res://Scripts/InventoryHandler.gd" id="16_ojmo7"]
+[ext_resource type="PackedScene" uid="uid://co1unga67midx" path="res://Scenes/CounterLeft.tscn" id="17_avsfc"]
+[ext_resource type="PackedScene" uid="uid://s7k3bscbj4ba" path="res://Scenes/Table.tscn" id="18_hbv5v"]
+[ext_resource type="PackedScene" uid="uid://boym03rgpbx1e" path="res://Scenes/CounterRight.tscn" id="19_wt6t0"]
+[ext_resource type="PackedScene" uid="uid://cbh7nfwydkv5v" path="res://Scenes/CounterTop.tscn" id="20_jtvou"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkhc"]
 animations = [{
@@ -101,9 +107,38 @@ size = Vector2(42, 40)
 
 [sub_resource type="Resource" id="Resource_qxwfc"]
 script = ExtResource("13_h0fiq")
-ItemName = "Test Item"
+ItemName = "Raw Meat"
 Icon = ExtResource("13_thfru")
-ItemModelPrefab = ExtResource("13_ej12o")
+
+[sub_resource type="Resource" id="Resource_l58xr"]
+script = ExtResource("13_h0fiq")
+ItemName = "Cooked Meat"
+Icon = ExtResource("15_pmuq5")
+
+[sub_resource type="Resource" id="Resource_chpms"]
+script = ExtResource("15_r5w87")
+CounterName = "Stove"
+CounterModelPrefab = ExtResource("15_lrkew")
+
+[sub_resource type="Resource" id="Resource_ktxpb"]
+script = ExtResource("15_r5w87")
+CounterName = "Counter Left"
+CounterModelPrefab = ExtResource("17_avsfc")
+
+[sub_resource type="Resource" id="Resource_f34l2"]
+script = ExtResource("15_r5w87")
+CounterName = "Table"
+CounterModelPrefab = ExtResource("18_hbv5v")
+
+[sub_resource type="Resource" id="Resource_7mdd6"]
+script = ExtResource("15_r5w87")
+CounterName = "Counter Right"
+CounterModelPrefab = ExtResource("19_wt6t0")
+
+[sub_resource type="Resource" id="Resource_kwy0k"]
+script = ExtResource("15_r5w87")
+CounterName = "Counter Top"
+CounterModelPrefab = ExtResource("20_jtvou")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5tsk"]
 radius = 19.0
@@ -133,7 +168,8 @@ offset_bottom = 23.0
 light_mask = 2
 visibility_layer = 0
 script = ExtResource("12_w2017")
-ItemTypes = Array[ExtResource("13_h0fiq")]([SubResource("Resource_qxwfc")])
+ItemTypes = Array[ExtResource("13_h0fiq")]([SubResource("Resource_qxwfc"), SubResource("Resource_l58xr")])
+CounterTypes = Array[ExtResource("15_r5w87")]([SubResource("Resource_chpms"), SubResource("Resource_ktxpb"), SubResource("Resource_f34l2"), SubResource("Resource_7mdd6"), SubResource("Resource_kwy0k")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(7, 28)

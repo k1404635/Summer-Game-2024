@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbh7nfwydkv5v"]
+
+[ext_resource type="Script" path="res://Scripts/InteractableCounters.gd" id="1_blmtx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahi8h"]
+size = Vector2(68, 87)
+
+[node name="CounterTop" type="Area2D"]
+position = Vector2(493, 157)
+script = ExtResource("1_blmtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 9.5)
+shape = SubResource("RectangleShape2D_ahi8h")
